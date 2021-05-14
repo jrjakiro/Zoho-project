@@ -1,3 +1,5 @@
+#include "header.h"
+
 void Node :: append(Node** head_ref,int value)
 {
     Node* new_node=new Node();

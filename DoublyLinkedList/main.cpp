@@ -1,15 +1,11 @@
 #include<iostream>
 #include<stdio.h>
 #include "header.h"
-#include "printvalues.cpp"
-#include "push.cpp"
-#include "insertbefor.cpp"
-#include "insertafter.cpp"
-#include "append.cpp"
-
 
 int main()
 {
+    Node* head=new Node();
+
     head->push(&head,10);
     head->push(&head,25);
     head->append(&head,45);

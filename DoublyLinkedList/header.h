@@ -20,6 +20,5 @@ class Node{                             //class
         void printvalues(Node* x);
 
 };
-Node* head=new Node();
 
 
