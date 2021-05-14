@@ -25,10 +25,10 @@ int main()
 	cout << "The priority queue gquiz is : ";
 	showpq(gquiz);
 
-	cout << "\ngquiz.size() : " << gquiz.size();
-	cout << "\ngquiz.top() : " << gquiz.top();
+	cout << "gquiz.size() : " << gquiz.size();
+	cout << "gquiz.top() : " << gquiz.top();
 
-	cout << "\ngquiz.pop() : ";
+	cout << "gquiz.pop() : ";
 	gquiz.pop();
 	showpq(gquiz);
 
