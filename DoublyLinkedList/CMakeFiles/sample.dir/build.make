@@ -97,19 +97,19 @@ CMakeFiles/sample.dir/push.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sample.dir/push.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jr/Documents/Zoho-project/DoublyLinkedList/push.cpp -o CMakeFiles/sample.dir/push.cpp.s
 
-CMakeFiles/sample.dir/printvalues.cpp.o: CMakeFiles/sample.dir/flags.make
-CMakeFiles/sample.dir/printvalues.cpp.o: printvalues.cpp
-CMakeFiles/sample.dir/printvalues.cpp.o: CMakeFiles/sample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jr/Documents/Zoho-project/DoublyLinkedList/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/sample.dir/printvalues.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sample.dir/printvalues.cpp.o -MF CMakeFiles/sample.dir/printvalues.cpp.o.d -o CMakeFiles/sample.dir/printvalues.cpp.o -c /Users/jr/Documents/Zoho-project/DoublyLinkedList/printvalues.cpp
+CMakeFiles/sample.dir/PrintVal.cpp.o: CMakeFiles/sample.dir/flags.make
+CMakeFiles/sample.dir/PrintVal.cpp.o: PrintVal.cpp
+CMakeFiles/sample.dir/PrintVal.cpp.o: CMakeFiles/sample.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jr/Documents/Zoho-project/DoublyLinkedList/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/sample.dir/PrintVal.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sample.dir/PrintVal.cpp.o -MF CMakeFiles/sample.dir/PrintVal.cpp.o.d -o CMakeFiles/sample.dir/PrintVal.cpp.o -c /Users/jr/Documents/Zoho-project/DoublyLinkedList/PrintVal.cpp
 
-CMakeFiles/sample.dir/printvalues.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sample.dir/printvalues.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jr/Documents/Zoho-project/DoublyLinkedList/printvalues.cpp > CMakeFiles/sample.dir/printvalues.cpp.i
+CMakeFiles/sample.dir/PrintVal.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sample.dir/PrintVal.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jr/Documents/Zoho-project/DoublyLinkedList/PrintVal.cpp > CMakeFiles/sample.dir/PrintVal.cpp.i
 
-CMakeFiles/sample.dir/printvalues.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sample.dir/printvalues.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jr/Documents/Zoho-project/DoublyLinkedList/printvalues.cpp -o CMakeFiles/sample.dir/printvalues.cpp.s
+CMakeFiles/sample.dir/PrintVal.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sample.dir/PrintVal.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jr/Documents/Zoho-project/DoublyLinkedList/PrintVal.cpp -o CMakeFiles/sample.dir/PrintVal.cpp.s
 
 CMakeFiles/sample.dir/append.cpp.o: CMakeFiles/sample.dir/flags.make
 CMakeFiles/sample.dir/append.cpp.o: append.cpp
@@ -171,7 +171,7 @@ CMakeFiles/sample.dir/delete.cpp.s: cmake_force
 sample_OBJECTS = \
 "CMakeFiles/sample.dir/main.cpp.o" \
 "CMakeFiles/sample.dir/push.cpp.o" \
-"CMakeFiles/sample.dir/printvalues.cpp.o" \
+"CMakeFiles/sample.dir/PrintVal.cpp.o" \
 "CMakeFiles/sample.dir/append.cpp.o" \
 "CMakeFiles/sample.dir/insert.cpp.o" \
 "CMakeFiles/sample.dir/size.cpp.o" \
@@ -182,7 +182,7 @@ sample_EXTERNAL_OBJECTS =
 
 sample: CMakeFiles/sample.dir/main.cpp.o
 sample: CMakeFiles/sample.dir/push.cpp.o
-sample: CMakeFiles/sample.dir/printvalues.cpp.o
+sample: CMakeFiles/sample.dir/PrintVal.cpp.o
 sample: CMakeFiles/sample.dir/append.cpp.o
 sample: CMakeFiles/sample.dir/insert.cpp.o
 sample: CMakeFiles/sample.dir/size.cpp.o

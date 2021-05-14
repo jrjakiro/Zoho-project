@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/sample.dir/PrintVal.cpp.o"
+  "CMakeFiles/sample.dir/PrintVal.cpp.o.d"
   "CMakeFiles/sample.dir/append.cpp.o"
   "CMakeFiles/sample.dir/append.cpp.o.d"
   "CMakeFiles/sample.dir/delete.cpp.o"
@@ -7,8 +9,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/sample.dir/insert.cpp.o.d"
   "CMakeFiles/sample.dir/main.cpp.o"
   "CMakeFiles/sample.dir/main.cpp.o.d"
-  "CMakeFiles/sample.dir/printvalues.cpp.o"
-  "CMakeFiles/sample.dir/printvalues.cpp.o.d"
   "CMakeFiles/sample.dir/push.cpp.o"
   "CMakeFiles/sample.dir/push.cpp.o.d"
   "CMakeFiles/sample.dir/size.cpp.o"

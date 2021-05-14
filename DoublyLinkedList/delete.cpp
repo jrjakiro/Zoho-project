@@ -1,5 +1,5 @@
 #include "header.h"
-void Node :: deleteNode(Node** head_ref, Node* del)
+void Node :: DeleteNode(Node** head_ref, Node* del)
 {
     /* base case */
     if (*head_ref == NULL || del == NULL)

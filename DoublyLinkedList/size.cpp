@@ -1,6 +1,6 @@
 #include "header.h"
 //to find the size
-int Node::findSize(Node *node)
+int Node::FindSize(Node *node)
 {
    int res = 0;
    while (node != NULL)
@@ -10,7 +10,8 @@ int Node::findSize(Node *node)
    }
    return res;
 }
-bool Node:: isempty(Node *node)
+//to check for empty or not
+bool Node:: isEmpty(Node *node)
 {
-    return(!(findSize(node)));
+    return((FindSize(node)));
 }

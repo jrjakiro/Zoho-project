@@ -129,6 +129,30 @@ sample/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/build
 .PHONY : sample/fast
 
+PrintVal.o: PrintVal.cpp.o
+.PHONY : PrintVal.o
+
+# target to build an object file
+PrintVal.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/PrintVal.cpp.o
+.PHONY : PrintVal.cpp.o
+
+PrintVal.i: PrintVal.cpp.i
+.PHONY : PrintVal.i
+
+# target to preprocess a source file
+PrintVal.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/PrintVal.cpp.i
+.PHONY : PrintVal.cpp.i
+
+PrintVal.s: PrintVal.cpp.s
+.PHONY : PrintVal.s
+
+# target to generate assembly for a file
+PrintVal.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/PrintVal.cpp.s
+.PHONY : PrintVal.cpp.s
+
 append.o: append.cpp.o
 .PHONY : append.o
 
@@ -225,30 +249,6 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-printvalues.o: printvalues.cpp.o
-.PHONY : printvalues.o
-
-# target to build an object file
-printvalues.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/printvalues.cpp.o
-.PHONY : printvalues.cpp.o
-
-printvalues.i: printvalues.cpp.i
-.PHONY : printvalues.i
-
-# target to preprocess a source file
-printvalues.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/printvalues.cpp.i
-.PHONY : printvalues.cpp.i
-
-printvalues.s: printvalues.cpp.s
-.PHONY : printvalues.s
-
-# target to generate assembly for a file
-printvalues.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/printvalues.cpp.s
-.PHONY : printvalues.cpp.s
-
 push.o: push.cpp.o
 .PHONY : push.o
 
@@ -306,6 +306,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... sample"
+	@echo "... PrintVal.o"
+	@echo "... PrintVal.i"
+	@echo "... PrintVal.s"
 	@echo "... append.o"
 	@echo "... append.i"
 	@echo "... append.s"
@@ -318,9 +321,6 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... printvalues.o"
-	@echo "... printvalues.i"
-	@echo "... printvalues.s"
 	@echo "... push.o"
 	@echo "... push.i"
 	@echo "... push.s"

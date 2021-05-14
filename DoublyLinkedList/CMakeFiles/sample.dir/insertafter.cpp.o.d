@@ -1,5 +1,5 @@
-CMakeFiles/sample.dir/insertafter.cpp.o: \
-  /Users/jr/Documents/Zoho-project/DoublyLinkedList/insertafter.cpp \
+CMakeFiles/sample.dir/Insert.cpp.o: \
+  /Users/jr/Documents/Zoho-project/DoublyLinkedList/Insert.cpp \
   /Users/jr/Documents/Zoho-project/DoublyLinkedList/header.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__config \

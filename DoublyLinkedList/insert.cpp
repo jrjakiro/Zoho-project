@@ -1,5 +1,5 @@
 #include "header.h"
-void Node :: insertAfter(Node *head,int value, int location)
+void Node :: Insert(Node *head,int value, int location)
 {
    Node *newNode=new Node();
    newNode -> data = value;
