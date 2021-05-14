@@ -13,5 +13,5 @@ int Node::FindSize(Node *node)
 //to check for empty or not
 bool Node:: isEmpty(Node *node)
 {
-    return((FindSize(node)));
+    return(!(FindSize(node)));
 }
