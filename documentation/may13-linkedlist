@@ -1,0 +1,24 @@
+First Day Report
+Linked list:-
+
+Linear data structure
+Consist of several nodes, each node consist of a data field and pointer link to next.
+Types:
+Singular Linked List
+Doubly Linked List
+Circular Linked List 
+Alternative : Arrays
+Advantages:
+Dynamic data storage
+Easier to Insert and Delete Elements
+Disadvantages:
+Sequential Access
+More Memory space is required and not in contagious memory location.
+Doubly Linked List:
+In Addition to the next pointer, previous node pointer will be present.
+Advantages:
+Efficient Insertion and deletion
+Bidirectional traversal
+Disadvantages:
+More space is required
+More Information is required	    

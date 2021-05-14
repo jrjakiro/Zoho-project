@@ -1,0 +1,20 @@
+Zoho Internship
+Queue
+Linear data structure
+First In First Out Principle
+Operations : Front, Rear, Enqueue & Dequeue
+Implementation : 
+Array 
+Easy implementation 
+Not a dynamic and can’t grow or shrink during runtime.
+Linked-list
+Dynamic size 
+But require more space.
+Standard Template library
+Easiest Implementation 
+But the compile time will be larger than other two methods. 
+Priority Queue:
+Every element is associated with a priority.
+Higher priority element is dequeued before the lower priority elements
+Incase of same priority, elements will be dequeued on the order of queue
+

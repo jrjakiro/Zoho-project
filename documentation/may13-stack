@@ -1,0 +1,15 @@
+ZOHO INTERNSHIP
+STACK
+Linear data structure
+Last In First Out or First in Last Out Mechanisms.
+Operations:  Push and Pop
+Implementation : 
+Array 
+Easy implementation 
+Not a dynamic and can’t grow or shrink during runtime.
+Linked-list
+Dynamic size 
+But require more space.
+Standard Template library
+Easiest Implementation 
+But the compile time will be larger than other two methods. 
