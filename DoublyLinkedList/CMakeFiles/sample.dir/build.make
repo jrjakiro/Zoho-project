@@ -97,38 +97,10 @@ CMakeFiles/sample.dir/push.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sample.dir/push.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jr/Documents/Zoho-project/DoublyLinkedList/push.cpp -o CMakeFiles/sample.dir/push.cpp.s
 
-CMakeFiles/sample.dir/insertbefor.cpp.o: CMakeFiles/sample.dir/flags.make
-CMakeFiles/sample.dir/insertbefor.cpp.o: insertbefor.cpp
-CMakeFiles/sample.dir/insertbefor.cpp.o: CMakeFiles/sample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jr/Documents/Zoho-project/DoublyLinkedList/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/sample.dir/insertbefor.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sample.dir/insertbefor.cpp.o -MF CMakeFiles/sample.dir/insertbefor.cpp.o.d -o CMakeFiles/sample.dir/insertbefor.cpp.o -c /Users/jr/Documents/Zoho-project/DoublyLinkedList/insertbefor.cpp
-
-CMakeFiles/sample.dir/insertbefor.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sample.dir/insertbefor.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jr/Documents/Zoho-project/DoublyLinkedList/insertbefor.cpp > CMakeFiles/sample.dir/insertbefor.cpp.i
-
-CMakeFiles/sample.dir/insertbefor.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sample.dir/insertbefor.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jr/Documents/Zoho-project/DoublyLinkedList/insertbefor.cpp -o CMakeFiles/sample.dir/insertbefor.cpp.s
-
-CMakeFiles/sample.dir/insertafter.cpp.o: CMakeFiles/sample.dir/flags.make
-CMakeFiles/sample.dir/insertafter.cpp.o: insertafter.cpp
-CMakeFiles/sample.dir/insertafter.cpp.o: CMakeFiles/sample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jr/Documents/Zoho-project/DoublyLinkedList/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/sample.dir/insertafter.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sample.dir/insertafter.cpp.o -MF CMakeFiles/sample.dir/insertafter.cpp.o.d -o CMakeFiles/sample.dir/insertafter.cpp.o -c /Users/jr/Documents/Zoho-project/DoublyLinkedList/insertafter.cpp
-
-CMakeFiles/sample.dir/insertafter.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sample.dir/insertafter.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jr/Documents/Zoho-project/DoublyLinkedList/insertafter.cpp > CMakeFiles/sample.dir/insertafter.cpp.i
-
-CMakeFiles/sample.dir/insertafter.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sample.dir/insertafter.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jr/Documents/Zoho-project/DoublyLinkedList/insertafter.cpp -o CMakeFiles/sample.dir/insertafter.cpp.s
-
 CMakeFiles/sample.dir/printvalues.cpp.o: CMakeFiles/sample.dir/flags.make
 CMakeFiles/sample.dir/printvalues.cpp.o: printvalues.cpp
 CMakeFiles/sample.dir/printvalues.cpp.o: CMakeFiles/sample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jr/Documents/Zoho-project/DoublyLinkedList/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/sample.dir/printvalues.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jr/Documents/Zoho-project/DoublyLinkedList/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/sample.dir/printvalues.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sample.dir/printvalues.cpp.o -MF CMakeFiles/sample.dir/printvalues.cpp.o.d -o CMakeFiles/sample.dir/printvalues.cpp.o -c /Users/jr/Documents/Zoho-project/DoublyLinkedList/printvalues.cpp
 
 CMakeFiles/sample.dir/printvalues.cpp.i: cmake_force
@@ -142,7 +114,7 @@ CMakeFiles/sample.dir/printvalues.cpp.s: cmake_force
 CMakeFiles/sample.dir/append.cpp.o: CMakeFiles/sample.dir/flags.make
 CMakeFiles/sample.dir/append.cpp.o: append.cpp
 CMakeFiles/sample.dir/append.cpp.o: CMakeFiles/sample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jr/Documents/Zoho-project/DoublyLinkedList/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/sample.dir/append.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jr/Documents/Zoho-project/DoublyLinkedList/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/sample.dir/append.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sample.dir/append.cpp.o -MF CMakeFiles/sample.dir/append.cpp.o.d -o CMakeFiles/sample.dir/append.cpp.o -c /Users/jr/Documents/Zoho-project/DoublyLinkedList/append.cpp
 
 CMakeFiles/sample.dir/append.cpp.i: cmake_force
@@ -153,27 +125,71 @@ CMakeFiles/sample.dir/append.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sample.dir/append.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jr/Documents/Zoho-project/DoublyLinkedList/append.cpp -o CMakeFiles/sample.dir/append.cpp.s
 
+CMakeFiles/sample.dir/insert.cpp.o: CMakeFiles/sample.dir/flags.make
+CMakeFiles/sample.dir/insert.cpp.o: insert.cpp
+CMakeFiles/sample.dir/insert.cpp.o: CMakeFiles/sample.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jr/Documents/Zoho-project/DoublyLinkedList/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/sample.dir/insert.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sample.dir/insert.cpp.o -MF CMakeFiles/sample.dir/insert.cpp.o.d -o CMakeFiles/sample.dir/insert.cpp.o -c /Users/jr/Documents/Zoho-project/DoublyLinkedList/insert.cpp
+
+CMakeFiles/sample.dir/insert.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sample.dir/insert.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jr/Documents/Zoho-project/DoublyLinkedList/insert.cpp > CMakeFiles/sample.dir/insert.cpp.i
+
+CMakeFiles/sample.dir/insert.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sample.dir/insert.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jr/Documents/Zoho-project/DoublyLinkedList/insert.cpp -o CMakeFiles/sample.dir/insert.cpp.s
+
+CMakeFiles/sample.dir/size.cpp.o: CMakeFiles/sample.dir/flags.make
+CMakeFiles/sample.dir/size.cpp.o: size.cpp
+CMakeFiles/sample.dir/size.cpp.o: CMakeFiles/sample.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jr/Documents/Zoho-project/DoublyLinkedList/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/sample.dir/size.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sample.dir/size.cpp.o -MF CMakeFiles/sample.dir/size.cpp.o.d -o CMakeFiles/sample.dir/size.cpp.o -c /Users/jr/Documents/Zoho-project/DoublyLinkedList/size.cpp
+
+CMakeFiles/sample.dir/size.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sample.dir/size.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jr/Documents/Zoho-project/DoublyLinkedList/size.cpp > CMakeFiles/sample.dir/size.cpp.i
+
+CMakeFiles/sample.dir/size.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sample.dir/size.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jr/Documents/Zoho-project/DoublyLinkedList/size.cpp -o CMakeFiles/sample.dir/size.cpp.s
+
+CMakeFiles/sample.dir/delete.cpp.o: CMakeFiles/sample.dir/flags.make
+CMakeFiles/sample.dir/delete.cpp.o: delete.cpp
+CMakeFiles/sample.dir/delete.cpp.o: CMakeFiles/sample.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jr/Documents/Zoho-project/DoublyLinkedList/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/sample.dir/delete.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sample.dir/delete.cpp.o -MF CMakeFiles/sample.dir/delete.cpp.o.d -o CMakeFiles/sample.dir/delete.cpp.o -c /Users/jr/Documents/Zoho-project/DoublyLinkedList/delete.cpp
+
+CMakeFiles/sample.dir/delete.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sample.dir/delete.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jr/Documents/Zoho-project/DoublyLinkedList/delete.cpp > CMakeFiles/sample.dir/delete.cpp.i
+
+CMakeFiles/sample.dir/delete.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sample.dir/delete.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jr/Documents/Zoho-project/DoublyLinkedList/delete.cpp -o CMakeFiles/sample.dir/delete.cpp.s
+
 # Object files for target sample
 sample_OBJECTS = \
 "CMakeFiles/sample.dir/main.cpp.o" \
 "CMakeFiles/sample.dir/push.cpp.o" \
-"CMakeFiles/sample.dir/insertbefor.cpp.o" \
-"CMakeFiles/sample.dir/insertafter.cpp.o" \
 "CMakeFiles/sample.dir/printvalues.cpp.o" \
-"CMakeFiles/sample.dir/append.cpp.o"
+"CMakeFiles/sample.dir/append.cpp.o" \
+"CMakeFiles/sample.dir/insert.cpp.o" \
+"CMakeFiles/sample.dir/size.cpp.o" \
+"CMakeFiles/sample.dir/delete.cpp.o"
 
 # External object files for target sample
 sample_EXTERNAL_OBJECTS =
 
 sample: CMakeFiles/sample.dir/main.cpp.o
 sample: CMakeFiles/sample.dir/push.cpp.o
-sample: CMakeFiles/sample.dir/insertbefor.cpp.o
-sample: CMakeFiles/sample.dir/insertafter.cpp.o
 sample: CMakeFiles/sample.dir/printvalues.cpp.o
 sample: CMakeFiles/sample.dir/append.cpp.o
+sample: CMakeFiles/sample.dir/insert.cpp.o
+sample: CMakeFiles/sample.dir/size.cpp.o
+sample: CMakeFiles/sample.dir/delete.cpp.o
 sample: CMakeFiles/sample.dir/build.make
 sample: CMakeFiles/sample.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/jr/Documents/Zoho-project/DoublyLinkedList/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable sample"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/jr/Documents/Zoho-project/DoublyLinkedList/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable sample"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sample.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

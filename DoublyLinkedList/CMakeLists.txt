@@ -10,9 +10,10 @@ add_executable(
     header.h
     main.cpp
     push.cpp
-    insertbefor.cpp
-    insertafter.cpp
     printvalues.cpp
     append.cpp
+    insert.cpp
+    size.cpp
+    delete.cpp
 
 )

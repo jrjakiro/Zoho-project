@@ -153,53 +153,53 @@ append.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/append.cpp.s
 .PHONY : append.cpp.s
 
-insertafter.o: insertafter.cpp.o
-.PHONY : insertafter.o
+delete.o: delete.cpp.o
+.PHONY : delete.o
 
 # target to build an object file
-insertafter.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/insertafter.cpp.o
-.PHONY : insertafter.cpp.o
+delete.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/delete.cpp.o
+.PHONY : delete.cpp.o
 
-insertafter.i: insertafter.cpp.i
-.PHONY : insertafter.i
+delete.i: delete.cpp.i
+.PHONY : delete.i
 
 # target to preprocess a source file
-insertafter.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/insertafter.cpp.i
-.PHONY : insertafter.cpp.i
+delete.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/delete.cpp.i
+.PHONY : delete.cpp.i
 
-insertafter.s: insertafter.cpp.s
-.PHONY : insertafter.s
+delete.s: delete.cpp.s
+.PHONY : delete.s
 
 # target to generate assembly for a file
-insertafter.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/insertafter.cpp.s
-.PHONY : insertafter.cpp.s
+delete.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/delete.cpp.s
+.PHONY : delete.cpp.s
 
-insertbefor.o: insertbefor.cpp.o
-.PHONY : insertbefor.o
+insert.o: insert.cpp.o
+.PHONY : insert.o
 
 # target to build an object file
-insertbefor.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/insertbefor.cpp.o
-.PHONY : insertbefor.cpp.o
+insert.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/insert.cpp.o
+.PHONY : insert.cpp.o
 
-insertbefor.i: insertbefor.cpp.i
-.PHONY : insertbefor.i
+insert.i: insert.cpp.i
+.PHONY : insert.i
 
 # target to preprocess a source file
-insertbefor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/insertbefor.cpp.i
-.PHONY : insertbefor.cpp.i
+insert.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/insert.cpp.i
+.PHONY : insert.cpp.i
 
-insertbefor.s: insertbefor.cpp.s
-.PHONY : insertbefor.s
+insert.s: insert.cpp.s
+.PHONY : insert.s
 
 # target to generate assembly for a file
-insertbefor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/insertbefor.cpp.s
-.PHONY : insertbefor.cpp.s
+insert.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/insert.cpp.s
+.PHONY : insert.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -273,6 +273,30 @@ push.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/push.cpp.s
 .PHONY : push.cpp.s
 
+size.o: size.cpp.o
+.PHONY : size.o
+
+# target to build an object file
+size.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/size.cpp.o
+.PHONY : size.cpp.o
+
+size.i: size.cpp.i
+.PHONY : size.i
+
+# target to preprocess a source file
+size.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/size.cpp.i
+.PHONY : size.cpp.i
+
+size.s: size.cpp.s
+.PHONY : size.s
+
+# target to generate assembly for a file
+size.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sample.dir/build.make CMakeFiles/sample.dir/size.cpp.s
+.PHONY : size.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -285,12 +309,12 @@ help:
 	@echo "... append.o"
 	@echo "... append.i"
 	@echo "... append.s"
-	@echo "... insertafter.o"
-	@echo "... insertafter.i"
-	@echo "... insertafter.s"
-	@echo "... insertbefor.o"
-	@echo "... insertbefor.i"
-	@echo "... insertbefor.s"
+	@echo "... delete.o"
+	@echo "... delete.i"
+	@echo "... delete.s"
+	@echo "... insert.o"
+	@echo "... insert.i"
+	@echo "... insert.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
@@ -300,6 +324,9 @@ help:
 	@echo "... push.o"
 	@echo "... push.i"
 	@echo "... push.s"
+	@echo "... size.o"
+	@echo "... size.i"
+	@echo "... size.s"
 .PHONY : help
 
 
