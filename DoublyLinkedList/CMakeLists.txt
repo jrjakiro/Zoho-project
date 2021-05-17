@@ -7,6 +7,5 @@ project(DoublyLinkedList)
 
 add_executable(
     doubly_linked_list
-    doubly_linked_list.h
     main.cpp
 )
