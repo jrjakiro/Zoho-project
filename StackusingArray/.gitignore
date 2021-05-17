@@ -9,7 +9,5 @@
  CmakeCache.txt
  doubly_linked_list
  Makefile
- vscode/
- main
- stack_using_array.h
- 
+ .vscode
+] 
