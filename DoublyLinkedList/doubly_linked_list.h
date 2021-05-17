@@ -1,15 +1,23 @@
 #include <iostream>
 using namespace std;
 // Node Creation
+class doubly_linked_list_node
+{
+    public:
+    int data;
+    doubly_linked_list_node *next;
+    doubly_linked_list_node *prev;
+};
+
 class doubly_linked_list
 { //class
-        int data;
-        doubly_linked_list *next;
-        doubly_linked_list *prev;
-        doubly_linked_list *head=nullptr;
+        doubly_linked_list_node *head;
 
 
-public:                                                      //Access specifier
+public:      
+        doubly_linked_list(){
+            head=NULL;
+        };                                                //Access specifier
         void push(int value); // insertion of value at front
 
         void append(int value); //insertion of value at end
@@ -30,7 +38,7 @@ public:                                                      //Access specifier
 
 void doubly_linked_list::push(int value)
 {
-    doubly_linked_list *new_node = new doubly_linked_list(); //new node creation
+    doubly_linked_list_node *new_node = new doubly_linked_list_node(); //new node creation
 
     new_node->data = value; //assigning argument value to new node data
 
@@ -49,7 +57,7 @@ void doubly_linked_list::push(int value)
 //to find the size
 size_t doubly_linked_list::find_size()
 {
-    doubly_linked_list *x = head;
+    doubly_linked_list_node *x = head;
 
     int count = 0;
     while (x != nullptr)
@@ -67,7 +75,7 @@ bool doubly_linked_list::is_empty()
 
 void doubly_linked_list::append(int value) //add the element at the back
 {
-    doubly_linked_list *new_node = new doubly_linked_list(); //creation of new node
+    doubly_linked_list_node *new_node = new doubly_linked_list_node(); //creation of new node
 
     new_node->data = value; //since it will become the last node we are adding data as value and next as nullptr
     new_node->next = nullptr;
@@ -79,7 +87,7 @@ void doubly_linked_list::append(int value) //add the element at the back
         return;
     }
 
-    doubly_linked_list *last = (head); //for finding the last node
+    doubly_linked_list_node *last = (head); //for finding the last node
 
     while (last->next != nullptr)
     {
@@ -92,7 +100,7 @@ void doubly_linked_list::append(int value) //add the element at the back
 }
 void doubly_linked_list::insert(int value, int location) //for inserting at a location
 {
-   doubly_linked_list *new_node = new doubly_linked_list(); //new doubly_linked_list creation
+   doubly_linked_list_node *new_node = new doubly_linked_list_node(); //new doubly_linked_list creation
 
    new_node->data = value; //new value is assigned to new node
 
@@ -103,8 +111,8 @@ void doubly_linked_list::insert(int value, int location) //for inserting at a lo
    }
    else
    {
-      doubly_linked_list *temp1 = head; //created temporary nodes
-      doubly_linked_list *temp2;
+      doubly_linked_list_node *temp1 = head; //created temporary nodes
+      doubly_linked_list_node *temp2;
       int count=1;
 
       while (count != location) //iterating to insert at a position
@@ -148,7 +156,7 @@ void doubly_linked_list::delete_node(int value) //for deletion of elements
         return;
     }
 
-    doubly_linked_list *temp = head;
+    doubly_linked_list_node *temp = head;
     while (temp->next != nullptr)
     {
         if (temp->data == value)
@@ -177,7 +185,7 @@ void doubly_linked_list::delete_node(int value) //for deletion of elements
 }
 void doubly_linked_list::delete_nodes(int value) //for deletion of elements
 {
-     doubly_linked_list *x = head;
+     doubly_linked_list_node *x = head;
     while (x != nullptr) //iterate till the last
     {
         if(x->data==value)
@@ -191,7 +199,7 @@ void doubly_linked_list::delete_nodes(int value) //for deletion of elements
 
 void doubly_linked_list::print_values() //prints the values in list
 {
-    doubly_linked_list *x = head;
+    doubly_linked_list_node *x = head;
     if (head == nullptr)
     {
         cout << "No Items in the list and it is empty";
