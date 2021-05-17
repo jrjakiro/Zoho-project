@@ -1,8 +1,10 @@
-#include <stdio.h>
+#include "stdio.h"
+#include "iostream"
 #include "doubly_linked_list.h"
 
 int main() //drivercode
 {
+    doubly_linked_list *head = new doubly_linked_list;
     doubly_linked_list dll;
 
 
@@ -11,9 +13,8 @@ int main() //drivercode
 
     dll.append(24); //pushing elements at the back
 
-    dll.Insert(33,2); //Inseting at a location
+    dll.Insert(33,1); //Inseting at a location
 
-    cout << "\nsize is " << (dll.FindSize()) << endl; //printing the size
 
     cout << "Before Deletion,Values are ";
     dll.PrintVal(); //printing all values before deletion

@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <stdio.h>
 using namespace std;
 // Node Creation
 class doubly_linked_list
@@ -7,6 +7,8 @@ class doubly_linked_list
         int data;
         doubly_linked_list *next;
         doubly_linked_list *prev;
+        doubly_linked_list *head=NULL;
+
 
 public:                                                      //Access specifier
         void push(int value); // Insertion of value at front
@@ -23,7 +25,6 @@ public:                                                      //Access specifier
 
         void PrintVal(); //Printing of values
 };
-    doubly_linked_list *head = new doubly_linked_list;
 
 
 void doubly_linked_list ::push(int value)
@@ -94,17 +95,18 @@ void doubly_linked_list ::Insert(int value, int location) //for inserting at a l
 
    newNode->data = value; //new value is assigned to new node
 
-   if (head == NULL)
+   if (location == 0)
    {
-      newNode->prev = newNode->next = NULL; //if head is Null then it means the new node will become the first node
-      head = newNode;
+     push(value);
+     return;
    }
    else
    {
       doubly_linked_list *temp1 = head; //created temporary nodes
       doubly_linked_list *temp2;
+      int count=1;
 
-      while (temp1->data != location) //iterating to insert at a position
+      while (count != location) //iterating to insert at a position
       {
          if (temp1->next == NULL) // to check whether the location is present or not
          {
@@ -113,7 +115,8 @@ void doubly_linked_list ::Insert(int value, int location) //for inserting at a l
          }
          else
          {
-            temp1 = temp1->next; //traversal till the condition is satisfied
+            temp1 = temp1->next;
+            count++; //traversal till the condition is satisfied
          }
       }
       temp2 = temp1->next;   //as the new node is inserted between two temp nodes,
