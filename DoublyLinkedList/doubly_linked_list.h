@@ -7,8 +7,6 @@ class doubly_linked_list
         int data;
         doubly_linked_list *next;
         doubly_linked_list *prev;
-        doubly_linked_list *head;
-
 
 public:                                                      //Access specifier
         void push(int value); // Insertion of value at front
@@ -25,6 +23,8 @@ public:                                                      //Access specifier
 
         void PrintVal(); //Printing of values
 };
+    doubly_linked_list *head = new doubly_linked_list;
+
 
 void doubly_linked_list ::push(int value)
 {

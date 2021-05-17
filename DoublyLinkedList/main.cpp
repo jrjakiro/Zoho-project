@@ -5,7 +5,6 @@ int main() //drivercode
 {
     doubly_linked_list dll;
 
-    doubly_linked_list *head = new doubly_linked_list;
 
     dll.push(10); //pushing values at the front
     dll.push(25);

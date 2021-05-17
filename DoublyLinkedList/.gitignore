@@ -4,3 +4,7 @@ CMakeFiles/
 .
 ..
 build/
+cmake_install.cmake
+CmakeCache.txt
+doubly_linked_list
+Makefile
