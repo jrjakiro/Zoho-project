@@ -2,7 +2,6 @@
 using namespace std;
 int main() //drivercode
 {
-    doubly_linked_list_node *head = new doubly_linked_list_node();
     doubly_linked_list dll;
 
 
