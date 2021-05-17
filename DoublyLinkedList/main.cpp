@@ -3,15 +3,16 @@
 
 int main() //drivercode
 {
-    doubly_linked_list *head = new doubly_linked_list;
     doubly_linked_list dll;
+
+    doubly_linked_list *head = new doubly_linked_list;
 
     dll.push(10); //pushing values at the front
     dll.push(25);
 
     dll.append(24); //pushing elements at the back
 
-    dll.Insert(33,0); //Inseting at a location
+    dll.Insert(33,2); //Inseting at a location
 
     cout << "\nsize is " << (dll.FindSize()) << endl; //printing the size
 
@@ -24,4 +25,5 @@ int main() //drivercode
 
     cout << "\n After Deletion, Values are "; //Printing the values after deletion
     dll.PrintVal();
+
 }

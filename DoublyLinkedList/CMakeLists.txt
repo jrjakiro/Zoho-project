@@ -6,14 +6,6 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 project(DoublyLinkedList)
 
 add_executable(
-    sample
     doubly_linked_list.h
     main.cpp
-    push.cpp
-    PrintVal.cpp
-    append.cpp
-    insert.cpp
-    size.cpp
-    delete.cpp
-
 )
