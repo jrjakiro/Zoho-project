@@ -4,7 +4,6 @@ int main() //drivercode
 {
     doubly_linked_list dll;
 
-
     dll.push(10); //pushing values at the front
     dll.push(25);
     dll.push(10); //pushing values at the front
@@ -15,12 +14,10 @@ int main() //drivercode
     dll.push(25);
     dll.push(10); //pushing values at the front
     dll.push(25);
-
 
     dll.append(24); //pushing elements at the back
 
     dll.insert(33,1); //Inseting at a location
-
 
     cout << "Before Deletion,Values are ";
     dll.print_values(); //printing all values before deletion

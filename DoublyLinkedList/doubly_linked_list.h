@@ -151,7 +151,6 @@ void doubly_linked_list::delete_node(int value) //for deletion of elements
     //if the node to be deleted is head node
     if (head->data == value)
     {
-        free(head);
         head = head->next;
         return;
     }
@@ -170,7 +169,6 @@ void doubly_linked_list::delete_node(int value) //for deletion of elements
                 temp->prev->next = temp->next;
 
             // Finally, free the memory occupied by del
-            free(temp);
             return;
         }
         else
