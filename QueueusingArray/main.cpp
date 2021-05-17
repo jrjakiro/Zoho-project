@@ -1,8 +1,4 @@
-#include "header.h"
-#include "queueEnque.cpp"
-#include "queueDisplay.cpp"
-#include "queueFront.cpp"
-#include "queueDeque.cpp"
+#include "queue_using_array.h"
 
 
 
@@ -10,7 +6,7 @@
 int main()
 {
 	// Create a queue of capacity 4
-	Queue q(4);
+	Queue q(10);
 
 	// print Queue elements
 	q.queueDisplay();
@@ -20,6 +16,7 @@ int main()
 	q.queueEnqueue(30);
 	q.queueEnqueue(40);
 	q.queueEnqueue(50);
+	cout<<"\nSize of queue is "<<q.find_size()<<endl;
 
 	// print Queue elements
 	q.queueDisplay();
