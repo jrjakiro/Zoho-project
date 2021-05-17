@@ -45,7 +45,7 @@ void doubly_linked_list::push(int value)
 }
 
 //to find the size
-int doubly_linked_list ::find_size()
+int doubly_linked_list::find_size()
 {
     doubly_linked_list *x = head;
 
@@ -58,12 +58,12 @@ int doubly_linked_list ::find_size()
     return count;
 }
 //to check for empty or not
-bool doubly_linked_list ::empty()
+bool doubly_linked_list::empty()
 {
     return (!(find_size()));
 }
 
-void doubly_linked_list ::append(int value) //add the element at the back
+void doubly_linked_list::append(int value) //add the element at the back
 {
     doubly_linked_list *new_node = new doubly_linked_list(); //creation of new node
 
@@ -88,7 +88,7 @@ void doubly_linked_list ::append(int value) //add the element at the back
     new_node->prev = last;
     return;
 }
-void doubly_linked_list ::insert(int value, int location) //for inserting at a location
+void doubly_linked_list::insert(int value, int location) //for inserting at a location
 {
    doubly_linked_list *new_node = new doubly_linked_list(); //new doubly_linked_list creation
 
@@ -129,7 +129,7 @@ void doubly_linked_list ::insert(int value, int location) //for inserting at a l
 }
 
 
-void doubly_linked_list ::delete_node(int value) //for deletion of elements
+void doubly_linked_list::delete_node(int value) //for deletion of elements
 {
 
     // base case that list is empty
@@ -174,7 +174,7 @@ void doubly_linked_list ::delete_node(int value) //for deletion of elements
     return;
 }
 
-void doubly_linked_list ::print_values() //prints the values in list
+void doubly_linked_list::print_values() //prints the values in list
 {
     doubly_linked_list *x = head;
     if (head == nullptr)
