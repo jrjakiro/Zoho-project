@@ -1,29 +1,27 @@
-#include<stdio.h>
-#include "DLL.h"
+#include <stdio.h>
+#include "doubly_linked_list.h"
 
-int main()                                                       //drivercode
+int main() //drivercode
 {
-    NodeDLL* head=new NodeDLL();                                       //head Node creation
+    doubly_linked_list *head = new doubly_linked_list;
+    doubly_linked_list dll;
 
-    head->push(&head,10);                                        //pushing elements at the front
-    head->push(&head,25);
+    dll.push(10); //pushing values at the front
+    dll.push(25);
 
-    head->append(&head,45);                                      //pushing elements at the back
+    dll.append(24); //pushing elements at the back
 
-    head->Insert(head,33,10);                                    //Inseting at a location
+    dll.Insert(33,0); //Inseting at a location
 
-    cout<<"\nsize is "<<(head->FindSize(head))<<endl;                 //printing the size
+    cout << "\nsize is " << (dll.FindSize()) << endl; //printing the size
 
-    cout<<"Before Deletion,Values are ";                                            
-    head->PrintVal(head);                                         //printing all values before deletion
+    cout << "Before Deletion,Values are ";
+    dll.PrintVal(); //printing all values before deletion
 
-    cout<<"List Empty : "<<head->isEmpty(head);                     //checking whether the list is empty or not return 1 if it is empty
+    cout << "List Empty : " << dll.isEmpty(); //checking whether the list is empty or not return 1 if it is empty
 
+    dll.DeleteNode(25); //deleting the first node
 
-    head->DeleteNode(&head,head);                                  //deleting the first node 
-
-    cout<<"\n After Deletion, Values are ";                        //Printing the values after deletion
-    head->PrintVal(head);
-
-
+    cout << "\n After Deletion, Values are "; //Printing the values after deletion
+    dll.PrintVal();
 }

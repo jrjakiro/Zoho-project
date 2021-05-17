@@ -1,18 +1,17 @@
-#include "DLL.h"                         //including header file
+#include "doubly_linked_list.h" //including header file
 
-void NodeDLL :: PrintVal(NodeDLL* x)              //prints the values in list
+void doubly_linked_list ::PrintVal() //prints the values in list
 {
-    int count=0;
-    if(x==NULL)
+    doubly_linked_list *x = head;
+    if (head == NULL)
     {
-        cout<<"No Items in the list and it is empty";
+        cout << "No Items in the list and it is empty";
     }
 
-    while(x!=NULL)                          //iterate till the last
+    while (x != NULL) //iterate till the last
     {
-        cout<<x->data<<" ";
-        x=x->next;
-        count++;
+        cout << x->data << " ";
+        x = x->next;
     }
-    cout<<"\n size is "<<count<<endl;       //prints the size for reference
+    cout << "\n size is " << doubly_linked_list::FindSize() << endl; //prints the size for reference
 };

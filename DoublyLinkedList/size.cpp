@@ -1,17 +1,19 @@
-#include "DLL.h"
+#include "doubly_linked_list.h"
 //to find the size
-int NodeDLL ::FindSize(NodeDLL *node)
+int doubly_linked_list ::FindSize()
 {
-   int res = 0;
-   while (node != NULL)
-   {
-       res++;
-       node = node->next;
-   }
-   return res;
+    doubly_linked_list *x = head;
+
+    int count = 0;
+    while (x != NULL)
+    {
+        count++;
+        x = x->next;
+    }
+    return count;
 }
 //to check for empty or not
-bool NodeDLL :: isEmpty(NodeDLL *node)
+bool doubly_linked_list ::isEmpty()
 {
-    return(!(FindSize(node)));
+    return (!(FindSize()));
 }
