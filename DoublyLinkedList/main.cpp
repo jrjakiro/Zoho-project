@@ -8,6 +8,15 @@ int main() //drivercode
 
     dll.push(10); //pushing values at the front
     dll.push(25);
+    dll.push(10); //pushing values at the front
+    dll.push(25);
+    dll.push(10); //pushing values at the front
+    dll.push(25);
+    dll.push(10); //pushing values at the front
+    dll.push(25);
+    dll.push(10); //pushing values at the front
+    dll.push(25);
+
 
     dll.append(24); //pushing elements at the back
 
@@ -17,9 +26,11 @@ int main() //drivercode
     cout << "Before Deletion,Values are ";
     dll.print_values(); //printing all values before deletion
 
-    cout << "\nList Empty : " << dll.is_empty(); //checking whether the list is empty or not return 1 if it is empty
+    cout << "\nList Empty : " << dll.is_empty()<<"\n"; //checking whether the list is empty or not return 1 if it is empty
 
     dll.delete_node(25); //deleting the first node
+    dll.delete_nodes(10); //deleting the first node
+
 
     cout << "\n After Deletion, Values are "; //Printing the values after deletion
     dll.print_values();

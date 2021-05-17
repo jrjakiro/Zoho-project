@@ -17,6 +17,8 @@ public:                                                      //Access specifier
         void insert(int value, int location); //for inserting at location
 
         void delete_node(int value); //for deleting a node
+        void delete_nodes(int value); //for deleting several nodes
+
 
         size_t find_size(); //for finding the size
 
@@ -173,6 +175,19 @@ void doubly_linked_list::delete_node(int value) //for deletion of elements
     cout << "Given item is not found in the list";
     return;
 }
+void doubly_linked_list::delete_nodes(int value) //for deletion of elements
+{
+     doubly_linked_list *x = head;
+    while (x != nullptr) //iterate till the last
+    {
+        if(x->data==value)
+        {
+            delete_node(value);
+        }
+        x=x->next;
+    }
+
+}
 
 void doubly_linked_list::print_values() //prints the values in list
 {
@@ -187,6 +202,6 @@ void doubly_linked_list::print_values() //prints the values in list
         cout << x->data << " ";
         x = x->next;
     }
-    cout << "\n size is " << doubly_linked_list::find_size() ; //prints the size for reference
+    cout << "\nsize is " << doubly_linked_list::find_size() ; //prints the size for reference
 };
 
