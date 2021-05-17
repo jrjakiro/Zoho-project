@@ -18,7 +18,7 @@ public:                                                      //Access specifier
 
         void delete_node(int value); //for deleting a node
 
-        int find_size(); //for finding the size
+        size_t find_size(); //for finding the size
 
         bool empty(); //check whether empty or not
 
@@ -45,7 +45,7 @@ void doubly_linked_list::push(int value)
 }
 
 //to find the size
-int doubly_linked_list::find_size()
+size_t doubly_linked_list::find_size()
 {
     doubly_linked_list *x = head;
 
