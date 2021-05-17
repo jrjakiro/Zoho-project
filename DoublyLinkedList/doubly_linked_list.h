@@ -104,7 +104,7 @@ void doubly_linked_list ::Insert(int value, int location) //for inserting at a l
       doubly_linked_list *temp1 = head; //created temporary nodes
       doubly_linked_list *temp2;
 
-      while (temp1->data != value) //iterating to insert at a position
+      while (temp1->data != location) //iterating to insert at a position
       {
          if (temp1->next == NULL) // to check whether the location is present or not
          {
