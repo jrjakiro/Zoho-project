@@ -1,6 +1,6 @@
-#include "header.h"                         //including header file
+#include "DLL.h"                         //including header file
 
-void Node :: PrintVal(Node* x)              //prints the values in list
+void NodeDLL :: PrintVal(NodeDLL* x)              //prints the values in list
 {
     int count=0;
     if(x==NULL)

@@ -1,6 +1,6 @@
-#include "header.h"                                             //including header.h
+#include "DLL.h"                                             //including DLL.h
 
-void Node :: DeleteNode(Node** head_ref, Node* del)             //for deletion of elements
+void NodeDLL :: DeleteNode(NodeDLL** head_ref, NodeDLL* del)             //for deletion of elements
 {
     // base case 
     if (*head_ref == NULL || del == NULL)

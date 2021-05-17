@@ -7,7 +7,7 @@ project(DoublyLinkedList)
 
 add_executable(
     sample
-    header.h
+    DLL.h
     main.cpp
     push.cpp
     PrintVal.cpp

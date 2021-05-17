@@ -1,6 +1,6 @@
-#include "header.h"
+#include "DLL.h"
 //to find the size
-int Node::FindSize(Node *node)
+int NodeDLL ::FindSize(NodeDLL *node)
 {
    int res = 0;
    while (node != NULL)
@@ -11,7 +11,7 @@ int Node::FindSize(Node *node)
    return res;
 }
 //to check for empty or not
-bool Node:: isEmpty(Node *node)
+bool NodeDLL :: isEmpty(NodeDLL *node)
 {
     return(!(FindSize(node)));
 }

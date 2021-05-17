@@ -1,10 +1,9 @@
-#include<iostream>
 #include<stdio.h>
-#include "header.h"
+#include "DLL.h"
 
 int main()                                                       //drivercode
 {
-    Node* head=new Node();                                       //head Node creation
+    NodeDLL* head=new NodeDLL();                                       //head Node creation
 
     head->push(&head,10);                                        //pushing elements at the front
     head->push(&head,25);

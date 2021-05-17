@@ -1,8 +1,8 @@
-#include "header.h"                                     //included the header file
+#include "DLL.h"                                     //included the header file
 
-void Node :: append(Node** head_ref,int value)          //add the element at the back
+void NodeDLL :: append(NodeDLL** head_ref,int value)          //add the element at the back
 {
-    Node* new_node=new Node();                          //creation of new node
+    NodeDLL* new_node=new NodeDLL();                          //creation of new node
 
     new_node->data=value;                               //since it will become the last node we are adding data as value and next as Null
     new_node->next=NULL;
@@ -14,7 +14,7 @@ void Node :: append(Node** head_ref,int value)          //add the element at the
         return;
     }
 
-    Node* last=(*head_ref);                             //for finding the last node
+    NodeDLL* last=(*head_ref);                             //for finding the last node
     while(last->next!=NULL)
     {
         last=last->next;

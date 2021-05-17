@@ -1,8 +1,8 @@
-#include "header.h"                                       //including header file
+#include "DLL.h"                                       //including header file
 
-void Node :: Insert(Node *head,int value, int location)  //for inserting at a location
+void NodeDLL :: Insert(NodeDLL *head,int value, int location)  //for inserting at a location
 {
-   Node *newNode=new Node();                             //new node creation
+   NodeDLL *newNode=new NodeDLL();                             //new NodeDLL creation
 
    newNode -> data = value;                              //new value is assigned to new node
 
@@ -13,8 +13,8 @@ void Node :: Insert(Node *head,int value, int location)  //for inserting at a lo
    }
    else
    {
-      Node *temp1 = head;                                //created temporary nodes
-      Node *temp2;
+      NodeDLL *temp1 = head;                                //created temporary nodes
+      NodeDLL *temp2;
       
       while(temp1 -> data != location)                   //iterating to insert at a position
       {

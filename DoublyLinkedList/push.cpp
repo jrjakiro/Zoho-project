@@ -1,8 +1,8 @@
-#include "header.h"                                     //Includes header.h file
+#include "DLL.h"                                     //Includes DLL.h file
 
-void Node :: push(Node** head_ref,int value)
+void NodeDLL :: push(NodeDLL** head_ref,int value)
 {
-    Node* new_node=new Node();                          //new node creation
+    NodeDLL* new_node=new NodeDLL();                          //new node creation
 
     new_node->data=value;                               //assigning argument value to new node data
 
