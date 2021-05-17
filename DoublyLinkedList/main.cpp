@@ -1,7 +1,5 @@
-#include "stdio.h"
-#include "iostream"
 #include "doubly_linked_list.h"
-
+using namespace std;
 int main() //drivercode
 {
     doubly_linked_list *head = new doubly_linked_list;
@@ -13,17 +11,17 @@ int main() //drivercode
 
     dll.append(24); //pushing elements at the back
 
-    dll.Insert(33,1); //Inseting at a location
+    dll.insert(33,1); //Inseting at a location
 
 
     cout << "Before Deletion,Values are ";
-    dll.PrintVal(); //printing all values before deletion
+    dll.print_values(); //printing all values before deletion
 
-    cout << "List Empty : " << dll.isEmpty(); //checking whether the list is empty or not return 1 if it is empty
+    cout << "List Empty : " << dll.empty(); //checking whether the list is empty or not return 1 if it is empty
 
-    dll.DeleteNode(25); //deleting the first node
+    dll.delete_node(25); //deleting the first node
 
     cout << "\n After Deletion, Values are "; //Printing the values after deletion
-    dll.PrintVal();
+    dll.print_values();
 
 }
