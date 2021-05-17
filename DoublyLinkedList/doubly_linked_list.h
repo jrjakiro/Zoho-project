@@ -20,7 +20,7 @@ public:                                                      //Access specifier
 
         size_t find_size(); //for finding the size
 
-        bool empty(); //check whether empty or not
+        bool is_empty(); //check whether empty or not
 
         void print_values(); //Printing of values
 };
@@ -58,7 +58,7 @@ size_t doubly_linked_list::find_size()
     return count;
 }
 //to check for empty or not
-bool doubly_linked_list::empty()
+bool doubly_linked_list::is_empty()
 {
     return (!(find_size()));
 }
