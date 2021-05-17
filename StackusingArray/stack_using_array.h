@@ -21,7 +21,7 @@ public:
 	bool is_empty();   
 	//for finding the size of the list
 	size_t find_size();        
-} s;
+} ;
 
 //push element into stack when the stack is not full 
 bool Stack::push(int x)
