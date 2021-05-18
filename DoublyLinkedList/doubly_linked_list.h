@@ -12,7 +12,8 @@ public:
 class doubly_linked_list : private node
 { //class
     node *head;
-    int length=0;
+    node *tail;
+    int length = 0;
 
 public:
     doubly_linked_list()
@@ -46,51 +47,47 @@ public:
 
     //to clear all the elements in the list
     void clear();
+
+    int printtail();
 };
 
 void doubly_linked_list::push_front(int value)
 {
-    node *new_node = new node(); //new node creation
-
-    new_node->data = value; //assigning argument value to new node data
-
-    new_node->prev = nullptr; //assigning the prev of new node as NULL because it becomes the first node
-
-    new_node->next = (head); //new node will point to the head node
+    //new node creation
+    node *new_node = new node();
+    new_node->data = value;
+    new_node->prev = nullptr;
+    new_node->next = (head);
 
     if (head != nullptr)
     {
         head->prev = new_node; //if head node is not empty then prev of head node will be assigned to the new node
     }
+    if (head == nullptr)
+    {
+        tail = new_node;
+    }
     length++;
     head = new_node; //now the new node becomes the first node
 }
-
 void doubly_linked_list::push_back(int value) //add the element at the back
 {
-    node *new_node = new node(); //creation of new node
-
-    new_node->data = value; //since it will become the last node we are adding data as value and next as nullptr
+    //new node creation
+    node *new_node = new node();
+    new_node->data = value;
+    new_node->prev = tail;
     new_node->next = nullptr;
 
-    if (head == nullptr)
+    if (tail != nullptr)
     {
-        new_node->prev = nullptr; //if head is null then it means the list is empty
-        head = new_node;          //so making new node as the first node
-        return;
+        tail->next = new_node; //if tail node is not empty then prev of head node will be assigned to the new node
     }
-
-    node *last = (head); //for finding the last node
-
-    while (last->next != nullptr)
+    if (head == tail)
     {
-        last = last->next;
+        head = new_node;
     }
-
-    last->next = new_node; //assign next value of last node as new node and new node of prev as last node
-    new_node->prev = last;
     length++;
-    return;
+    tail = new_node; //now the new node becomes the last node
 }
 
 int doubly_linked_list::remove_front()
@@ -244,7 +241,6 @@ void doubly_linked_list::print_values() //prints the values in list
 //to find the size
 size_t doubly_linked_list::size()
 {
-    
     return length;
 }
 //to check for empty or not
