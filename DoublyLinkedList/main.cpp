@@ -28,7 +28,13 @@ int main() //drivercode
     dll.delete_nodes(10); //deleting the first node
 
 
-    cout << "\n After Deletion, Values are "; //Printing the values after deletion
+    cout << "\nAfter Deletion, Values are "; //Printing the values after deletion
     dll.print_values();
+
+    //clearing the list
+    dll.clear();
+    cout<< "\nAfter Clearing size of list is"<<dll.size();
+    dll.print_values();
+
 
 }

@@ -17,22 +17,31 @@ class doubly_linked_list:private node
 public:      
         doubly_linked_list(){
             head=NULL;
-        };                                                //Access specifier
-        void push_front(int value); // insertion of value at front
+        };   
+         // insertion of value at front                                          
+        void push_front(int value);
+        //insertion of value at end
+        void push_back(int value);
 
-        void push_back(int value); //insertion of value at end
+        //for inserting at location
+        void insert(int value, int location); 
+        
+        //for deleting a node
+        void delete_node(int value); 
+        //for deleting several nodes
+        void delete_nodes(int value); 
 
-        void insert(int value, int location); //for inserting at location
+        //for finding the size
+        size_t size(); 
+        
+        //check whether empty or not
+        bool is_empty(); 
+        
+        //Printing of values
+        void print_values(); 
 
-        void delete_node(int value); //for deleting a node
-        void delete_nodes(int value); //for deleting several nodes
-
-
-        size_t size(); //for finding the size
-
-        bool is_empty(); //check whether empty or not
-
-        void print_values(); //Printing of values
+        //to clear all the elements in the list
+        void clear();
 };
 
 
@@ -98,6 +107,7 @@ void doubly_linked_list::push_back(int value) //add the element at the back
     new_node->prev = last;
     return;
 }
+
 void doubly_linked_list::insert(int value, int location) //for inserting at a location
 {
    node *new_node = new node(); //new doubly_linked_list creation
@@ -137,7 +147,6 @@ void doubly_linked_list::insert(int value, int location) //for inserting at a lo
       cout << "\ninsertion success!!!\n";
    }
 }
-
 
 void doubly_linked_list::delete_node(int value) //for deletion of elements
 {
@@ -195,12 +204,24 @@ void doubly_linked_list::delete_nodes(int value) //for deletion of elements
 
 }
 
+void doubly_linked_list::clear()
+{
+    node *current= head;
+    node *temp;
+    while(current!=nullptr)
+    {
+        temp=current;
+        current=current->next;
+        delete(temp);
+    }
+    head=nullptr;
+}
 void doubly_linked_list::print_values() //prints the values in list
 {
     node *x = head;
     if (head == nullptr)
     {
-        cout << "No Items in the list and it is empty";
+        cout << "\nNo Items in the list and it is empty";
     }
 
     while (x != nullptr) //iterate till the last
