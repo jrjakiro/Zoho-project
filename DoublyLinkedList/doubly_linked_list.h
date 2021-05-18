@@ -114,7 +114,6 @@ int doubly_linked_list::remove_back()
 void doubly_linked_list::insert(int value, int location) //for inserting at a location
 {
     node *new_node = new node(); //new doubly_linked_list creation
-
     new_node->data = value; //new value is assigned to new node
 
     if (location == 0)
@@ -198,7 +197,7 @@ void doubly_linked_list::remove_at(int location) //for inserting at a location
             count++;
         }
     }
-
+    cout << "The node is not Found";
     return;
 }
 
@@ -251,5 +250,5 @@ size_t doubly_linked_list::size()
 //to check for empty or not
 bool doubly_linked_list::is_empty()
 {
-    return (!(size()));
+    return (!(head));
 }

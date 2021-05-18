@@ -47,5 +47,8 @@ int main() //drivercode
     cout<< "\nAfter Clearing size of list is "<<dll.size();
     dll.print_values();
 
+    cout << "\nList Empty : " << dll.is_empty()<<"\n"; //checking whether the list is empty or not return 1 if it is empty
+
+
 
 }
