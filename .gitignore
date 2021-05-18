@@ -4,3 +4,8 @@ CMakeFiles/
 .
 ..
 build/
+QueueusingArray/cmake_install.cmake
+QueueusingArray/queue_using_array
+QueueusingArray/.vscode/settings.json
+DoublyLinkedList/.vscode/launch.json
+QueueusingArray/Makefile

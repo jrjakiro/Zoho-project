@@ -4,18 +4,18 @@ int main() //drivercode
 {
     doubly_linked_list dll;
 
-    dll.push(10); //pushing values at the front
-    dll.push(25);
-    dll.push(10); //pushing values at the front
-    dll.push(25);
-    dll.push(10); //pushing values at the front
-    dll.push(25);
-    dll.push(10); //pushing values at the front
-    dll.push(25);
-    dll.push(10); //pushing values at the front
-    dll.push(25);
+    dll.push_front(10); //push_fronting values at the front
+    dll.push_front(25);
+    dll.push_front(10); //push_fronting values at the front
+    dll.push_front(25);
+    dll.push_front(10); //push_fronting values at the front
+    dll.push_front(25);
+    dll.push_front(10); //push_fronting values at the front
+    dll.push_front(25);
+    dll.push_front(10); //push_fronting values at the front
+    dll.push_front(25);
 
-    dll.append(24); //pushing elements at the back
+    dll.push_back(24); //push_fronting elements at the back
 
     dll.insert(33,1); //Inseting at a location
 
