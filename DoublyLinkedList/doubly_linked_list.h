@@ -18,7 +18,8 @@ class doubly_linked_list : private node
 public:
     doubly_linked_list()
     {
-        head = NULL;
+        head = nullptr;
+        tail = nullptr;
     };
     // insertion of value at front
     void push_front(int value);
@@ -48,7 +49,6 @@ public:
     //to clear all the elements in the list
     void clear();
 
-    int printtail();
 };
 
 void doubly_linked_list::push_front(int value)
@@ -92,6 +92,12 @@ void doubly_linked_list::push_back(int value) //add the element at the back
 
 int doubly_linked_list::remove_front()
 {
+    if(head==nullptr)
+    {
+        cout << "No items in the list";
+        return;
+    }
+
     int temp = head->data;
     //assigning the prev of second node as NULL because it becomes the first node
     head->next->prev = nullptr;
@@ -103,6 +109,11 @@ int doubly_linked_list::remove_front()
 }
 int doubly_linked_list::remove_back()
 {
+    if(tail==nullptr)
+    {
+        cout << "No items in the list";
+        return;
+    }
     //for finding the last node
     int temp = tail->data;
     tail->prev->next = nullptr;
