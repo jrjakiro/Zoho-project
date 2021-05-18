@@ -217,13 +217,12 @@ void doubly_linked_list::remove(int start, int end)
 void doubly_linked_list::clear()
 {
     node *current = head;
-    node *temp;
     while (current != nullptr)
     {
-        temp = current;
-        current = current->next;
+        head = current->next;
+        delete (current);
         length--;
-        delete (temp);
+        current = head;
     }
     head = nullptr;
 }
