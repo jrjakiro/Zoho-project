@@ -22,6 +22,16 @@ int main() //drivercode
     cout << "Before Deletion,Values are ";
     dll.print_values(); //printing all values before deletion
 
+    dll.remove_front();
+    cout << "\nAfter removing the first value ";
+    dll.print_values();
+
+    dll.remove_back();
+    cout << "\nAfter removing the last value ";
+    dll.print_values();
+
+
+
     cout << "\nList Empty : " << dll.is_empty()<<"\n"; //checking whether the list is empty or not return 1 if it is empty
 
     dll.delete_node(25); //deleting the first node

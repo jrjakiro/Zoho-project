@@ -40,6 +40,10 @@ public:
         //Printing of values
         void print_values(); 
 
+        //for removing values at front and back
+        void remove_front();
+        void remove_back();
+
         //to clear all the elements in the list
         void clear();
 };
@@ -61,25 +65,6 @@ void doubly_linked_list::push_front(int value)
     }
 
     head = new_node; //now the new node becomes the first node
-}
-
-//to find the size
-size_t doubly_linked_list::size()
-{
-    node *x = head;
-
-    int count = 0;
-    while (x != nullptr)
-    {
-        count++;
-        x = x->next;
-    }
-    return count;
-}
-//to check for empty or not
-bool doubly_linked_list::is_empty()
-{
-    return (!(size()));
 }
 
 void doubly_linked_list::push_back(int value) //add the element at the back
@@ -203,6 +188,28 @@ void doubly_linked_list::delete_nodes(int value) //for deletion of elements
     }
 
 }
+void doubly_linked_list::remove_front()
+{
+    //assigning the prev of second node as NULL because it becomes the first node
+    head->next->prev=nullptr;
+    //new node will point to the head node
+    head = head->next; //now the new node becomes the first node
+
+}
+void doubly_linked_list::remove_back()
+{
+    //for finding the last node
+    node *last = (head); 
+
+
+    while (last->next != nullptr)
+    {
+        last = last->next;
+    }
+    last->prev->next = nullptr;    
+     return;
+
+}
 
 void doubly_linked_list::clear()
 {
@@ -232,3 +239,21 @@ void doubly_linked_list::print_values() //prints the values in list
     cout << "\nsize is " << doubly_linked_list::size() ; //prints the size for reference
 };
 
+//to find the size
+size_t doubly_linked_list::size()
+{
+    node *x = head;
+
+    int count = 0;
+    while (x != nullptr)
+    {
+        count++;
+        x = x->next;
+    }
+    return count;
+}
+//to check for empty or not
+bool doubly_linked_list::is_empty()
+{
+    return (!(size()));
+}
