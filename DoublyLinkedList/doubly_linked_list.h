@@ -35,11 +35,6 @@ public:
     void remove_at(int location);
     void remove(int start, int end);
 
-    //for deleting a node
-    void delete_node(int value);
-    //for deleting several nodes
-    void delete_nodes(int value);
-
     //for finding the size
     size_t size();
 
@@ -67,7 +62,7 @@ void doubly_linked_list::push_front(int value)
     {
         head->prev = new_node; //if head node is not empty then prev of head node will be assigned to the new node
     }
-
+    length++;
     head = new_node; //now the new node becomes the first node
 }
 
@@ -94,6 +89,7 @@ void doubly_linked_list::push_back(int value) //add the element at the back
 
     last->next = new_node; //assign next value of last node as new node and new node of prev as last node
     new_node->prev = last;
+    length++;
     return;
 }
 
@@ -105,6 +101,7 @@ int doubly_linked_list::remove_front()
     //new node will point to the head node
     head = head->next;
     //now the new node becomes the first node
+    length--;
     return temp;
 }
 int doubly_linked_list::remove_back()
@@ -117,6 +114,7 @@ int doubly_linked_list::remove_back()
         last = last->next;
     }
     last->prev->next = nullptr;
+    length--;
     return last->data;
 }
 
@@ -155,6 +153,8 @@ void doubly_linked_list::insert(int value, int location) //for inserting at a lo
         new_node->prev = temp1; //similarly in temp1 node next as new node and in temp2 node previous as new node
         new_node->next = temp2;
         temp2->prev = new_node;
+        length++;
+        return;
     }
 }
 
@@ -184,6 +184,7 @@ void doubly_linked_list::remove_at(int location) //for inserting at a location
             //Change prev only if node to be deleted is NOT the first node */
             if (temp->prev != nullptr)
                 temp->prev->next = temp->next;
+            length--;
             // Finally, free the memory occupied by del
             return;
         }
@@ -218,6 +219,7 @@ void doubly_linked_list::clear()
     {
         temp = current;
         current = current->next;
+        length--;
         delete (temp);
     }
     head = nullptr;
@@ -242,14 +244,8 @@ void doubly_linked_list::print_values() //prints the values in list
 //to find the size
 size_t doubly_linked_list::size()
 {
-    node *x = head;
-    int count = 0;
-    while (x != nullptr)
-    {
-        count++;
-        x = x->next;
-    }
-    return count;
+    
+    return length;
 }
 //to check for empty or not
 bool doubly_linked_list::is_empty()
