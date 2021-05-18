@@ -3,57 +3,55 @@ using namespace std;
 // Node Creation
 class node
 {
-    public:
+public:
     int data;
     node *next;
     node *prev;
 };
 
-class doubly_linked_list:private node
+class doubly_linked_list : private node
 { //class
-        node *head;
+    node *head;
+    int length=0;
 
+public:
+    doubly_linked_list()
+    {
+        head = NULL;
+    };
+    // insertion of value at front
+    void push_front(int value);
+    //insertion of value at end
+    void push_back(int value);
 
-public:      
-        doubly_linked_list(){
-            head=NULL;
-        };   
-         // insertion of value at front                                          
-        void push_front(int value);
-        //insertion of value at end
-        void push_back(int value);
+    //for removing values at front and back
+    int remove_front();
+    int remove_back();
 
-        //for removing values at front and back
-        int remove_front();
-        int remove_back();
+    //for inserting at location
+    void insert(int value, int location);
 
+    //for removing at a location
+    void remove_at(int location);
+    void remove(int start, int end);
 
-        //for inserting at location
-        void insert(int value, int location); 
+    //for deleting a node
+    void delete_node(int value);
+    //for deleting several nodes
+    void delete_nodes(int value);
 
-        //for removing at a location
-        void remove_at(int location);
-        void remove(int start,int end);
-        
-        //for deleting a node
-        void delete_node(int value); 
-        //for deleting several nodes
-        void delete_nodes(int value); 
+    //for finding the size
+    size_t size();
 
-        //for finding the size
-        size_t size(); 
-        
-        //check whether empty or not
-        bool is_empty(); 
-        
-        //Printing of values
-        void print_values(); 
+    //check whether empty or not
+    bool is_empty();
 
+    //Printing of values
+    void print_values();
 
-        //to clear all the elements in the list
-        void clear();
+    //to clear all the elements in the list
+    void clear();
 };
-
 
 void doubly_linked_list::push_front(int value)
 {
@@ -83,7 +81,7 @@ void doubly_linked_list::push_back(int value) //add the element at the back
     if (head == nullptr)
     {
         new_node->prev = nullptr; //if head is null then it means the list is empty
-        head = new_node;       //so making new node as the first node
+        head = new_node;          //so making new node as the first node
         return;
     }
 
@@ -101,81 +99,80 @@ void doubly_linked_list::push_back(int value) //add the element at the back
 
 int doubly_linked_list::remove_front()
 {
-    int temp=head->data;
+    int temp = head->data;
     //assigning the prev of second node as NULL because it becomes the first node
-    head->next->prev=nullptr;
+    head->next->prev = nullptr;
     //new node will point to the head node
-    head = head->next; 
+    head = head->next;
     //now the new node becomes the first node
     return temp;
-    
 }
 int doubly_linked_list::remove_back()
 {
     //for finding the last node
-    node *last = (head); 
+    node *last = (head);
 
     while (last->next != nullptr)
     {
         last = last->next;
     }
-    last->prev->next = nullptr;    
-     return last->data;
+    last->prev->next = nullptr;
+    return last->data;
 }
 
 void doubly_linked_list::insert(int value, int location) //for inserting at a location
 {
-   node *new_node = new node(); //new doubly_linked_list creation
+    node *new_node = new node(); //new doubly_linked_list creation
 
-   new_node->data = value; //new value is assigned to new node
+    new_node->data = value; //new value is assigned to new node
 
-   if (location == 0)
-   {
-     push_front(value);
-     return;
-   }
-   else
-   {
-      node *temp1 = head; //created temporary nodes
-      node *temp2;
-      int count=1;
+    if (location == 0)
+    {
+        push_front(value);
+        return;
+    }
+    else
+    {
+        node *temp1 = head; //created temporary nodes
+        node *temp2;
+        int count = 1;
 
-      while (count != location) //iterating to insert at a position
-      {
-         if (temp1->next == nullptr) // to check whether the location is present or not
-         {
-            cout << "Given node is not found in the list!!! \n";
-            return;
-         }
-         else
-         {
-            temp1 = temp1->next;
-            count++; //traversal till the condition is satisfied
-         }
-      }
-      temp2 = temp1->next;   //as the new node is inserted between two temp nodes,
-      temp1->next = new_node; // assigning the prev node of new node as temp1 and next node as temp2
-      new_node->prev = temp1; //similarly in temp1 node next as new node and in temp2 node previous as new node
-      new_node->next = temp2;
-      temp2->prev = new_node;
-   }
-} 
+        while (count != location) //iterating to insert at a position
+        {
+            if (temp1->next == nullptr) // to check whether the location is present or not
+            {
+                cout << "Given node is not found in the list!!! \n";
+                return;
+            }
+            else
+            {
+                temp1 = temp1->next;
+                count++; //traversal till the condition is satisfied
+            }
+        }
+        temp2 = temp1->next;    //as the new node is inserted between two temp nodes,
+        temp1->next = new_node; // assigning the prev node of new node as temp1 and next node as temp2
+        new_node->prev = temp1; //similarly in temp1 node next as new node and in temp2 node previous as new node
+        new_node->next = temp2;
+        temp2->prev = new_node;
+    }
+}
 
 void doubly_linked_list::remove_at(int location) //for inserting at a location
 {
-   if (location == 0)
-   {
-     int q=remove_front();
-     return;
-   }
-       // base case that list is empty
+    if (location == 0)
+    {
+        int q = remove_front();
+        return;
+    }
+    // base case that list is empty
     if (head == nullptr)
     {
         cout << "The List contains no item to delete\n";
         return;
     }
     node *temp = head;
-    int count=1;
+    int count = 1;
     while (temp->next != nullptr)
     {
         if (count == location)
@@ -198,15 +195,15 @@ void doubly_linked_list::remove_at(int location) //for inserting at a location
         }
     }
 
-      return;
- }
+    return;
+}
 
 //for deleting the nodes between from and two
-void doubly_linked_list::remove(int start,int end)
+void doubly_linked_list::remove(int start, int end)
 {
-    node *current=head;
-    int count=start;
-    while(start<=end)
+    node *current = head;
+    int count = start;
+    while (start <= end)
     {
         remove_at(count);
         start++;
@@ -215,15 +212,15 @@ void doubly_linked_list::remove(int start,int end)
 
 void doubly_linked_list::clear()
 {
-    node *current= head;
+    node *current = head;
     node *temp;
-    while(current!=nullptr)
+    while (current != nullptr)
     {
-        temp=current;
-        current=current->next;
-        delete(temp);
+        temp = current;
+        current = current->next;
+        delete (temp);
     }
-    head=nullptr;
+    head = nullptr;
 }
 
 void doubly_linked_list::print_values() //prints the values in list
@@ -239,14 +236,13 @@ void doubly_linked_list::print_values() //prints the values in list
         cout << x->data << " ";
         x = x->next;
     }
-    cout << "\nsize is " << doubly_linked_list::size() ; //prints the size for reference
+    cout << "\nsize is " << doubly_linked_list::size(); //prints the size for reference
 };
 
 //to find the size
 size_t doubly_linked_list::size()
 {
     node *x = head;
-
     int count = 0;
     while (x != nullptr)
     {
