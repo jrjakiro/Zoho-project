@@ -22,28 +22,29 @@ int main() //drivercode
     cout << "Before Deletion,Values are ";
     dll.print_values(); //printing all values before deletion
 
-    dll.remove_front();
-    cout << "\nAfter removing the first value ";
+    cout << "\nAfter removing the first value "<<dll.remove_front()<<endl;
     dll.print_values();
 
-    dll.remove_back();
-    cout << "\nAfter removing the last value ";
+    cout << "\nAfter removing the last value "<<dll.remove_back()<<endl;
+    dll.print_values();
+
+    dll.remove_at(2);
+    cout << "\nAfter removing the second value ";
     dll.print_values();
 
 
+    dll.remove(3,5);
+    cout << "\nAfter removing the 3rd-5th  value ";
+    dll.print_values();
 
     cout << "\nList Empty : " << dll.is_empty()<<"\n"; //checking whether the list is empty or not return 1 if it is empty
-
-    dll.delete_node(25); //deleting the first node
-    dll.delete_nodes(10); //deleting the first node
-
 
     cout << "\nAfter Deletion, Values are "; //Printing the values after deletion
     dll.print_values();
 
     //clearing the list
     dll.clear();
-    cout<< "\nAfter Clearing size of list is"<<dll.size();
+    cout<< "\nAfter Clearing size of list is "<<dll.size();
     dll.print_values();
 
 
