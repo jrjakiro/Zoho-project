@@ -104,10 +104,10 @@ int doubly_linked_list::remove_front()
 int doubly_linked_list::remove_back()
 {
     //for finding the last node
-    int temp=tail->data;
+    int temp = tail->data;
     tail->prev->next = nullptr;
     length--;
-    tail=tail->prev;
+    tail = tail->prev;
     return temp;
 }
 
@@ -122,7 +122,7 @@ void doubly_linked_list::insert(int value, int location) //for inserting at a lo
         push_front(value);
         return;
     }
-    else if(location==length)
+    else if (location == length)
     {
         push_back(value);
         return;
@@ -163,9 +163,9 @@ void doubly_linked_list::remove_at(int location) //for inserting at a location
         int q = remove_front();
         return;
     }
-    else if(location==length)
+    else if (location == length)
     {
-        int q=remove_back();
+        int q = remove_back();
         return;
     }
     // base case that list is empty
