@@ -11,8 +11,8 @@ public:
 
 class doubly_linked_list : private node
 { //class
-    node *head;
-    node *tail;
+    node *head=nullptr;
+    node *tail=nullptr;
     int length = 0;
 
 public:
