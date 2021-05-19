@@ -92,10 +92,10 @@ void doubly_linked_list::push_back(int value) //add the element at the back
 
 int doubly_linked_list::remove_front()
 {
-    if(head==nullptr)
+    if (head == nullptr)
     {
         cout << "No items in the list";
-        return;
+        return 0;
     }
 
     int temp = head->data;
@@ -112,7 +112,7 @@ int doubly_linked_list::remove_back()
     if(tail==nullptr)
     {
         cout << "No items in the list";
-        return;
+        return 0;
     }
     //for finding the last node
     int temp = tail->data;
@@ -170,12 +170,12 @@ void doubly_linked_list::remove_at(int location) //for inserting at a location
 {
     if (location == 0)
     {
-        int q = remove_front();
+        remove_front();
         return;
     }
     else if (location == length)
     {
-        int q = remove_back();
+        remove_back();
         return;
     }
     // base case that list is empty
@@ -186,18 +186,13 @@ void doubly_linked_list::remove_at(int location) //for inserting at a location
     }
     node *temp = head;
     int count = 1;
-    while (temp->next != nullptr)
+    while (count<=location)
     {
-        if (count == location)
+        if (count == location && temp!= nullptr)
         {
-            // Change next only if node to be deleted is NOT the last node
-            if (temp->next != nullptr)
-                temp->next->prev = temp->prev;
-
-            //Change prev only if node to be deleted is NOT the first node */
-            if (temp->prev != nullptr)
-                temp->prev->next = temp->next;
-            length--;
+            (temp->next)->prev = temp->prev;
+            (temp->prev)->next = temp->next;
+            delete temp;
             // Finally, free the memory occupied by del
             return;
         }
@@ -226,6 +221,11 @@ void doubly_linked_list::remove(int start, int end)
 
 void doubly_linked_list::clear()
 {
+    if(length==0)
+    {
+        cout << "No nodes to clear everything is cleared already";
+        return;
+    }
     node *current = head;
     while (current != nullptr)
     {
@@ -234,7 +234,10 @@ void doubly_linked_list::clear()
         length--;
         current = head;
     }
+    length--;
     head = nullptr;
+    tail = nullptr;
+
 }
 
 void doubly_linked_list::print_values() //prints the values in list

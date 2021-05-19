@@ -10,3 +10,10 @@ QueueusingArray/.vscode/settings.json
 DoublyLinkedList/.vscode/launch.json
 QueueusingArray/Makefile
 DoublyLinkedList/.vscode/settings.json
+DoublyLinkedList/catch_amalgamated.cpp
+DoublyLinkedList/catch_amalgamated.hpp
+DoublyLinkedList/CTestTestfile.cmake
+DoublyLinkedList/tester_tests-b12d07c.cmake
+DoublyLinkedList/tester_include-b12d07c.cmake
+DoublyLinkedList/tester
+DoublyLinkedList/DartConfiguration.tcl
