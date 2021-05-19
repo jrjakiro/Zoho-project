@@ -5,7 +5,7 @@
 doubly_linked_list dll;
 TEST_CASE("Testing the size of list when it is empty"){
     REQUIRE(dll.size() == 0);
-    REQUIRE(dll.is_empty() == 1);
+    REQUIRE(dll.is_empty() == true);
 }
 
 TEST_CASE("adding first element"){
@@ -43,6 +43,7 @@ TEST_CASE("Removing at a  invalid position"){
     dll.remove_at(-1);
     REQUIRE(dll.size() == 2);
 }
+
 
 TEST_CASE("clearing all the elemtents"){
     dll.print_values();
