@@ -39,6 +39,11 @@ TEST_CASE("Inserting element in the negative position"){
     dll.insert(45,-2);
     REQUIRE(dll.size() == 2);
 }
+TEST_CASE("Removing at a  invalid position"){
+    dll.remove_at(-1);
+    REQUIRE(dll.size() == 2);
+}
+
 TEST_CASE("clearing all the elemtents"){
     dll.print_values();
     dll.clear();
@@ -55,6 +60,12 @@ TEST_CASE("clearing all the elemtents when the list is empty"){
     dll.clear();
     REQUIRE(dll.size() == 0);
 }
+TEST_CASE("Removing at a position or invalid when the list is empty"){
+    dll.remove_at(1);
+    REQUIRE(dll.size() == 0);
+}
+
+
 
 
 
