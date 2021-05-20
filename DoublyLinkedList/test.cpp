@@ -22,6 +22,7 @@ TEST_CASE("Inserting element in the invalid position or position > length"){
     dll.insert(45,55);
     REQUIRE(dll.size() == 2);
 }
+
 TEST_CASE("Inserting element in the negative position"){
     dll.insert(45,-2);
     REQUIRE(dll.size() == 2);
@@ -31,10 +32,44 @@ TEST_CASE("Inserting element in the first position"){
     REQUIRE(dll.size() == 3);
 }
 TEST_CASE("Inserting element in the last position"){
-    dll.insert(45,3);
-    dll.print_values();
+    dll.insert(55,3);
     REQUIRE(dll.size() == 4);
 }
+TEST_CASE("Removing element in the first position"){
+    REQUIRE(dll.size() == 4);
+    REQUIRE(dll.remove_front() == 45);
+    REQUIRE(dll.size() == 3);
+}
+TEST_CASE("Removing element in the Last position"){
+    REQUIRE(dll.size() == 3);
+    REQUIRE(dll.remove_back() == 55);
+    REQUIRE(dll.size() == 2);
+}
+TEST_CASE("Removing element at the Third position"){
+    dll.push_front(23);
+    dll.push_front(44);
+    dll.push_front(11);
+    dll.push_front(9);
+    REQUIRE(dll.size() == 6);
+    dll.remove(3);
+    REQUIRE(dll.size() == 5);
+}
+TEST_CASE("Removing element at the Invalid position greater than length"){
+    REQUIRE(dll.size() == 5);
+    dll.remove(40);
+    REQUIRE(dll.size() == 5);
+}
+TEST_CASE("Removing element at the Invalid negative position"){
+    REQUIRE(dll.size() == 5);
+    dll.remove(-4);
+    REQUIRE(dll.size() == 5);
+}
+
+
+
+
+
+
 
 
 

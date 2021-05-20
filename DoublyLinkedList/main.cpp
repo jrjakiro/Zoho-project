@@ -29,7 +29,7 @@ int main() //drivercode
     cout << "\nAfter removing the last value "<<dll.remove_back()<<endl;
     dll.print_values();
 
-    dll.remove_at(2);
+    dll.remove(2);
     cout << "\nAfter removing the second value ";
     dll.print_values();
 
