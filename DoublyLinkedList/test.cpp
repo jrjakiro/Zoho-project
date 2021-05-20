@@ -64,6 +64,37 @@ TEST_CASE("Removing element at the Invalid negative position"){
     dll.remove(-4);
     REQUIRE(dll.size() == 5);
 }
+TEST_CASE("Removing element at the length value"){
+    REQUIRE(dll.size() == 5);
+    dll.remove(5);
+    REQUIRE(dll.size() == 5);
+}
+
+TEST_CASE("Removing elements at the given range"){
+    REQUIRE(dll.size() == 5);
+    dll.remove(2,4);
+    REQUIRE(dll.size() == 2);
+}
+TEST_CASE("Removing elements at the invalid negative range"){
+    REQUIRE(dll.size() == 2);
+    dll.remove(-2,4);
+    REQUIRE(dll.size() == 2);
+}
+TEST_CASE("Removing elements at the invalid range where start is greater than end "){
+    REQUIRE(dll.size() == 2);
+    dll.remove(3,1);
+    REQUIRE(dll.size() == 2);
+}
+TEST_CASE("Removing elements at the invalid range where start is greater than length "){
+    REQUIRE(dll.size() == 2);
+    dll.remove(40,50);
+    REQUIRE(dll.size() == 2);
+}
+
+
+
+
+
 
 
 

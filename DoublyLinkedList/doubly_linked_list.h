@@ -200,7 +200,7 @@ int doubly_linked_list::remove_back(){
 }
 //for removing node at a position
 void doubly_linked_list::remove(int location){
-    if(location>length || location <0)
+    if(location>=length || location <0)
     {
         cout << "Invalid Location Specified to Remove"<<endl;
     }
@@ -210,7 +210,7 @@ void doubly_linked_list::remove(int location){
             remove_front();
             return;
         }
-        else if (location == length){
+        else if (location == length-1){
             remove_back();
             return;
         }
@@ -231,16 +231,19 @@ void doubly_linked_list::remove(int location){
         }
     }
 }
-
 //for deleting the nodes between from and two
-void doubly_linked_list::remove(int start, int end)
-{
-    node *current = head;
-    int count = start;
-    while (start <= end)
-    {
-        remove(count);
-        start++;
+void doubly_linked_list::remove(int start, int end){
+    //checking whether the range is able to delete or not 
+    if(start<0 || start>end || end>length){
+        cout << "Invalid Range to Remove"<<endl;
+    }
+    else{
+        node *current = head;
+        int count = start;
+        while (start <= end){
+            remove(count);
+            start++;
+        }
     }
 }
 
