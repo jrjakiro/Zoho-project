@@ -90,21 +90,17 @@ TEST_CASE("Removing elements at the invalid range where start is greater than le
     dll.remove(40,50);
     REQUIRE(dll.size() == 2);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+TEST_CASE("Clearing the Elements"){
+    REQUIRE(dll.size() == 2);
+    dll.clear();
+    REQUIRE(dll.size() == 0);
+    REQUIRE(dll.is_empty() == true);
+}
+TEST_CASE("Removing element in the first position after clearing the list"){
+    REQUIRE(dll.remove_front() != 1);
+}
+TEST_CASE("Removing element in the last position after clearing the list"){
+    REQUIRE(dll.remove_back() != 1);
+}
 
 

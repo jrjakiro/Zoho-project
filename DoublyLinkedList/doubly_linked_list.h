@@ -16,11 +16,6 @@ class doubly_linked_list : private node
     int length = 0;
 
 public:
-    doubly_linked_list()
-    {
-        head = nullptr;
-        tail = nullptr;
-    };
     //for creating new node
     node* create_node(node *x, int value, node *y);
 
@@ -144,7 +139,7 @@ void doubly_linked_list::insert(int value, int location){
 int doubly_linked_list::remove_front(){
     //to check whether the list is empty or not
     if (head == nullptr){
-        cout << "No items in the list to delete";
+        cout << "No items in the list to delete"<<endl;
         return 0;
     }
     //if the list has only one item
@@ -173,7 +168,7 @@ int doubly_linked_list::remove_front(){
 //for removing last item in the list
 int doubly_linked_list::remove_back(){
     if(tail==nullptr){
-        cout << "No items in the list to delete";
+        cout << "No items in the list to delete"<<endl;
         return 0;
     }
     else if(head==tail){
@@ -247,34 +242,28 @@ void doubly_linked_list::remove(int start, int end){
     }
 }
 
-void doubly_linked_list::clear()
-{
-    if(length==0)
+//clearing all the contents
+void doubly_linked_list::clear(){
+    //iterate till the last node
+    while (head != nullptr)
     {
-        cout << "No nodes to clear everything is cleared already";
-        return;
+        node *temp = head;
+        head = head->next;
+        delete (temp);
     }
-    node *current = head;
-    while (current != nullptr)
-    {
-        head = current->next;
-        delete (current);
-        length--;
-        current = head;
-    }
-    length--;
-    head = nullptr;
-    tail = nullptr;
-
+    cout << "The List is Cleared" << endl;
+    head = tail = nullptr;
+    length = 0;
 }
 
-void doubly_linked_list::print_values() //prints the values in list
+//prints the values in list
+void doubly_linked_list::print_values() 
 {
     cout << "\n";
     node *x = head;
     if (head == nullptr)
     {
-        cout << "\nNo Items in the list and it is empty";
+        cout << "\nNo Items in the list and it is empty"<<endl;
     }
 
     while (x != nullptr) //iterate till the last
@@ -282,7 +271,7 @@ void doubly_linked_list::print_values() //prints the values in list
         cout << x->data << " ";
         x = x->next;
     }
-    cout << "\nsize is " << doubly_linked_list::size(); //prints the size for reference
+    cout << "\nsize is " << doubly_linked_list::size()<<endl; //prints the size for reference
 };
 
 //to find the size
@@ -290,6 +279,7 @@ size_t doubly_linked_list::size()
 {
     return length;
 }
+
 //to check for empty or not
 bool doubly_linked_list::is_empty()
 {
