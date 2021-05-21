@@ -172,6 +172,7 @@ int doubly_linked_list::remove(int location)
             int value = head->data;
             delete (head);
             head = tail = nullptr;
+            length--;
             return value;
         }
         //if the list has two or more item
@@ -203,6 +204,7 @@ int doubly_linked_list::remove(int location)
             int value;
             delete (head);
             head = tail = nullptr;
+            length--;
             return value;
         }
         //if the list has two or more item
@@ -267,13 +269,10 @@ void doubly_linked_list::clear()
     //iterate till the last node
     while (head != nullptr)
     {
-        node *temp = head;
-        head = head->next;
-        delete (temp);
+        cout << " " << head->data;
+        remove_front();
     }
     cout << "The List is Cleared" << endl;
-    head = tail = nullptr;
-    length = 0;
 }
 
 //prints the values in list
