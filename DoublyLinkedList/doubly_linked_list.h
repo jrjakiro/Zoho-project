@@ -106,7 +106,7 @@ void doubly_linked_list::insert(int value, int location)
         length++;
         return;
     }
-    else if (location == length)
+    if (location == length)
     {
         //new node creation
         node *new_node = new node(tail, value, nullptr);
@@ -125,21 +125,19 @@ void doubly_linked_list::insert(int value, int location)
         length++;
         return;
     }
-    else
-    {
-        //created temporary nodes which will point to previous and next node
-        node *temp1 = find_node(location);
-        //new node has to be inserted after the temp1 node then temp1 is the previous node
-        //temp2 node will be next node
-        node *temp2 = temp1->next;
-        //as the new node is inserted between two temp nodes,
-        node *new_node = new node(temp1, value, temp2);
-        //assigning values for the two before and after node.
-        temp1->next = new_node;
-        temp2->prev = new_node;
-        length++;
-        return;
-    }
+
+    //created temporary nodes which will point to previous and next node
+    node *temp1 = find_node(location);
+    //new node has to be inserted after the temp1 node then temp1 is the previous node
+    //temp2 node will be next node
+    node *temp2 = temp1->next;
+    //as the new node is inserted between two temp nodes,
+    node *new_node = new node(temp1, value, temp2);
+    //assigning values for the two before and after node.
+    temp1->next = new_node;
+    temp2->prev = new_node;
+    length++;
+    return;
 }
 
 //for removing a node at front in the list
@@ -169,7 +167,7 @@ int doubly_linked_list::remove(int location)
             return 0;
         }
         //if the list has only one item
-        else if (head == tail)
+        if (head == tail)
         {
             int value = head->data;
             delete (head);
@@ -178,21 +176,19 @@ int doubly_linked_list::remove(int location)
             return value;
         }
         //if the list has two or more item
-        else
-        {
-            // creating a temporary variable to store head node
-            node *temp = head;
-            //assigning the data to value in order to return
-            int value = temp->data;
-            //assigning the second nodes's prev pointer to null and change change head pointing to it
-            temp->next->prev = nullptr;
-            head = temp->next;
-            //clearing the node and decreasing the size
-            delete (temp);
-            length--;
-            //returning the value which is deleted
-            return value;
-        }
+
+        // creating a temporary variable to store head node
+        node *temp = head;
+        //assigning the data to value in order to return
+        int value = temp->data;
+        //assigning the second nodes's prev pointer to null and change change head pointing to it
+        temp->next->prev = nullptr;
+        head = temp->next;
+        //clearing the node and decreasing the size
+        delete (temp);
+        length--;
+        //returning the value which is deleted
+        return value;
     }
     if (location == length - 1)
     {
@@ -201,7 +197,7 @@ int doubly_linked_list::remove(int location)
             cout << "No items in the list to delete" << endl;
             return 0;
         }
-        else if (head == tail)
+        if (head == tail)
         {
             int value;
             delete (head);
@@ -210,22 +206,18 @@ int doubly_linked_list::remove(int location)
             return value;
         }
         //if the list has two or more item
-        else
-        {
-            // creating a temporary variable to store tail node
-            node *temp = tail;
-            //assigning the data to value in order to return
-            int value = temp->data;
-            //assigning the last second nodes's next pointer to null and change tail pointing to it
-            temp->prev->next = nullptr;
-            tail = temp->prev;
-            //clearing the node and decreasing the size
-            delete (temp);
-            length--;
-            //returning the value which is deleted
-            return value;
-        }
-        return 0;
+        // creating a temporary variable to store tail node
+        node *temp = tail;
+        //assigning the data to value in order to return
+        int value = temp->data;
+        //assigning the last second nodes's next pointer to null and change tail pointing to it
+        temp->prev->next = nullptr;
+        tail = temp->prev;
+        //clearing the node and decreasing the size
+        delete (temp);
+        length--;
+        //returning the value which is deleted
+        return value;
     }
 
     node *temp = find_node(location);
