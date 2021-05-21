@@ -194,7 +194,7 @@ int doubly_linked_list::remove(int location)
             return value;
         }
     }
-    else if (location == length - 1)
+    if (location == length - 1)
     {
         if (tail == nullptr)
         {
@@ -227,16 +227,14 @@ int doubly_linked_list::remove(int location)
         }
         return 0;
     }
-    else
-    {
-        node *temp = find_node(location);
-        (temp->next)->prev = temp->prev;
-        (temp->prev)->next = temp->next;
-        //deleting the memory occupied
-        delete (temp);
-        length--;
-        return 0;
-    }
+
+    node *temp = find_node(location);
+    (temp->next)->prev = temp->prev;
+    (temp->prev)->next = temp->next;
+    //deleting the memory occupied
+    delete (temp);
+    length--;
+    return 0;
 }
 //for deleting the nodes between from and two
 void doubly_linked_list::remove(int start, int end)
