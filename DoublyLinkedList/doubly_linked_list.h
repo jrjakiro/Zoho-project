@@ -7,17 +7,21 @@ public:
     int data;
     node *next;
     node *prev;
+    node(node *x, int value, node *y){
+        data = value;
+        prev = x;
+        next = y;
+    };
+
 };
 
-class doubly_linked_list : private node
+class doubly_linked_list
 { //class
     node *head=nullptr;
     node *tail=nullptr;
     int length = 0;
 
 public:
-    //for creating new node
-    node* create_node(node *x, int value, node *y);
 
     // insertion of value at front & back
     void push_front(int value);
@@ -48,18 +52,11 @@ public:
 
 };
 //for  creating new node
-node* doubly_linked_list::create_node(node *x, int value, node *y){
-    node *new_node = new node();
-    new_node->data = value;
-    new_node->prev = x;
-    new_node->next = y;
-    return new_node;
-};
 
 //adding element at the front
 void doubly_linked_list::push_front(int value){
     //new node creation
-    node * new_node = create_node(nullptr, value, head);
+    node * new_node = new node(nullptr, value, head);
 
     //if head node is not empty then prev of head node will be assigned to the new node
     if (head != nullptr)
@@ -78,7 +75,7 @@ void doubly_linked_list::push_front(int value){
 //add the element at the back
 void doubly_linked_list::push_back(int value) {
     //new node creation
-    node *new_node = create_node(tail,value,nullptr);
+    node *new_node = new node(tail,value,nullptr);
     //if the list is not empty then tail node is not empty then next of tail node will be assigned to the new node
     if (tail!=nullptr)
     {
@@ -125,7 +122,7 @@ void doubly_linked_list::insert(int value, int location){
                 //temp2 node will be next node
             temp2 = temp1->next;
                 //as the new node is inserted between two temp nodes,
-            node* new_node=create_node(temp1, value, temp2);
+            node* new_node=new node(temp1, value, temp2);
                 //assigning values for the two before and after node.
             temp1->next = new_node; 
             temp2->prev = new_node;
