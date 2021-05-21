@@ -36,7 +36,7 @@ public:
     int remove_back();
 
     //for removing at a location and from a range
-    void remove(int location);
+    int remove(int location);
     void remove(int start, int end);
 
     //for finding the size
@@ -143,105 +143,102 @@ void doubly_linked_list::insert(int value, int location)
 //for removing a node at front in the list
 int doubly_linked_list::remove_front()
 {
-    //to check whether the list is empty or not
-    if (head == nullptr)
-    {
-        cout << "No items in the list to delete" << endl;
-        return 0;
-    }
-    //if the list has only one item
-    else if (head == tail)
-    {
-        int value = head->data;
-        delete (head);
-        head = tail = nullptr;
-        return value;
-    }
-    //if the list has two or more item
-    else
-    {
-        // creating a temporary variable to store head node
-        node *temp = head;
-        //assigning the data to value in order to return
-        int value = temp->data;
-        //assigning the second nodes's prev pointer to null and change change head pointing to it
-        temp->next->prev = nullptr;
-        head = temp->next;
-        //clearing the node and decreasing the size
-        delete (temp);
-        length--;
-        //returning the value which is deleted
-        return value;
-    }
+    return remove(0);
 }
 //for removing last item in the list
 int doubly_linked_list::remove_back()
 {
-    if (tail == nullptr)
-    {
-        cout << "No items in the list to delete" << endl;
-        return 0;
-    }
-    else if (head == tail)
-    {
-        int value;
-        delete (head);
-        head = tail = nullptr;
-        return value;
-    }
-    //if the list has two or more item
-    else
-    {
-        // creating a temporary variable to store tail node
-        node *temp = tail;
-        //assigning the data to value in order to return
-        int value = temp->data;
-        //assigning the last second nodes's next pointer to null and change tail pointing to it
-        temp->prev->next = nullptr;
-        tail = temp->prev;
-        //clearing the node and decreasing the size
-        delete (temp);
-        length--;
-        //returning the value which is deleted
-        return value;
-    }
+    return remove(length - 1);
 }
 //for removing node at a position
-void doubly_linked_list::remove(int location)
+int doubly_linked_list::remove(int location)
 {
     if (location >= length || location < 0)
     {
         cout << "Invalid Location Specified to Remove" << endl;
+        return 0;
+    }
+    if (location == 0)
+    {
+        //to check whether the list is empty or not
+        if (head == nullptr)
+        {
+            cout << "No items in the list to delete" << endl;
+            return 0;
+        }
+        //if the list has only one item
+        else if (head == tail)
+        {
+            int value = head->data;
+            delete (head);
+            head = tail = nullptr;
+            return value;
+        }
+        //if the list has two or more item
+        else
+        {
+            // creating a temporary variable to store head node
+            node *temp = head;
+            //assigning the data to value in order to return
+            int value = temp->data;
+            //assigning the second nodes's prev pointer to null and change change head pointing to it
+            temp->next->prev = nullptr;
+            head = temp->next;
+            //clearing the node and decreasing the size
+            delete (temp);
+            length--;
+            //returning the value which is deleted
+            return value;
+        }
+    }
+    else if (location == length - 1)
+    {
+        if (tail == nullptr)
+        {
+            cout << "No items in the list to delete" << endl;
+            return 0;
+        }
+        else if (head == tail)
+        {
+            int value;
+            delete (head);
+            head = tail = nullptr;
+            return value;
+        }
+        //if the list has two or more item
+        else
+        {
+            // creating a temporary variable to store tail node
+            node *temp = tail;
+            //assigning the data to value in order to return
+            int value = temp->data;
+            //assigning the last second nodes's next pointer to null and change tail pointing to it
+            temp->prev->next = nullptr;
+            tail = temp->prev;
+            //clearing the node and decreasing the size
+            delete (temp);
+            length--;
+            //returning the value which is deleted
+            return value;
+        }
+        return 0;
     }
     else
     {
-        if (location == 0)
+        node *temp = head;
+        int count = 1;
+        //iterate to reach the right location
+        while (count <= location)
         {
-            remove_front();
-            return;
+            temp = temp->next;
+            count++;
         }
-        else if (location == length - 1)
-        {
-            remove_back();
-            return;
-        }
-        else
-        {
-            node *temp = head;
-            int count = 1;
-            //iterate to reach the right location
-            while (count <= location)
-            {
-                temp = temp->next;
-                count++;
-            }
-            (temp->next)->prev = temp->prev;
-            (temp->prev)->next = temp->next;
-            //deleting the memory occupied
-            delete (temp);
-            length--;
-            return;
-        }
+        (temp->next)->prev = temp->prev;
+        (temp->prev)->next = temp->next;
+        //deleting the memory occupied
+        delete (temp);
+        length--;
+        return 0;
     }
 }
 //for deleting the nodes between from and two
@@ -306,5 +303,5 @@ size_t doubly_linked_list::size()
 //to check for empty or not
 bool doubly_linked_list::is_empty()
 {
-    return (length==0);
+    return (length == 0);
 }
