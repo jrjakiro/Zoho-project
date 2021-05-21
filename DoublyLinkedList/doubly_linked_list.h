@@ -70,40 +70,12 @@ node *doubly_linked_list::find_node(int location)
 //adding element at the front
 void doubly_linked_list::push_front(int value)
 {
-    //new node creation
-    node *new_node = new node(nullptr, value, head);
-
-    //if head node is not empty then prev of head node will be assigned to the new node
-    if (head != nullptr)
-    {
-        head->prev = new_node;
-    }
-    //if the node is empty then both head and tail will point to the new node
-    else
-    {
-        tail = new_node;
-    }
-    //now the new node becomes the first node
-    head = new_node;
-    length++;
+    insert(value, 0);
 }
 //add the element at the back
 void doubly_linked_list::push_back(int value)
 {
-    //new node creation
-    node *new_node = new node(tail, value, nullptr);
-    //if the list is not empty then tail node is not empty then next of tail node will be assigned to the new node
-    if (tail != nullptr)
-    {
-        tail->next = new_node;
-    }
-    else
-    {
-        head = new_node;
-    }
-    //now the new node becomes the last node
-    tail = new_node;
-    length++;
+    insert(value, length - 1);
 }
 //for inserting at a location
 void doubly_linked_list::insert(int value, int location)
@@ -113,14 +85,44 @@ void doubly_linked_list::insert(int value, int location)
         cout << "Invalid Location specified to Insert" << endl;
         return;
     }
+
     if (location == 0)
     {
-        push_front(value);
+        //new node creation
+        node *new_node = new node(nullptr, value, head);
+
+        //if head node is not empty then prev of head node will be assigned to the new node
+        if (head != nullptr)
+        {
+            head->prev = new_node;
+        }
+        //if the node is empty then both head and tail will point to the new node
+        else
+        {
+            tail = new_node;
+        }
+        //now the new node becomes the first node
+        head = new_node;
+        length++;
         return;
     }
     else if (location == length)
     {
-        push_back(value);
+        //new node creation
+        node *new_node = new node(tail, value, nullptr);
+
+        //if the list is not empty then tail node is not empty then next of tail node will be assigned to the new node
+        if (tail != nullptr)
+        {
+            tail->next = new_node;
+        }
+        else
+        {
+            head = new_node;
+        }
+        //now the new node becomes the last node
+        tail = new_node;
+        length++;
         return;
     }
     else
@@ -227,14 +229,7 @@ int doubly_linked_list::remove(int location)
     }
     else
     {
-        node *temp = head;
-        int count = 1;
-        //iterate to reach the right location
-        while (count <= location)
-        {
-            temp = temp->next;
-            count++;
-        }
+        node *temp = find_node(location);
         (temp->next)->prev = temp->prev;
         (temp->prev)->next = temp->next;
         //deleting the memory occupied
@@ -250,16 +245,14 @@ void doubly_linked_list::remove(int start, int end)
     if (start < 0 || start > end || end > length)
     {
         cout << "Invalid Range to Remove" << endl;
+        return;
     }
-    else
+    node *current = head;
+    int count = start;
+    while (start <= end)
     {
-        node *current = head;
-        int count = start;
-        while (start <= end)
-        {
-            remove(count);
-            start++;
-        }
+        remove(count);
+        start++;
     }
 }
 
@@ -269,7 +262,6 @@ void doubly_linked_list::clear()
     //iterate till the last node
     while (head != nullptr)
     {
-        cout << " " << head->data;
         remove_front();
     }
     cout << "The List is Cleared" << endl;
