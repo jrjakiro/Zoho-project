@@ -61,7 +61,7 @@ node<T> *doubly_linked_list<T>::find_node(int location)
     node<T> *temp = head;
     int count = 1;
     //iterating to insert at a position
-    while (count != location)
+    while (count <= location)
     {
         // to check whether the location is present or not
         //traversal till the condition is satisfied
@@ -163,74 +163,49 @@ T doubly_linked_list<T>::remove_back()
 template <typename T>
 T doubly_linked_list<T>::remove(int location)
 {
+    //checking for the invalid location
     if (location >= length || location < 0)
     {
         cout << "Invalid Location Specified to Remove" << endl;
         return 0;
     }
-    if (location == 0)
+    //to check whether the list is empty or not
+    if (head == nullptr)
     {
-        //to check whether the list is empty or not
-        if (head == nullptr)
-        {
-            cout << "No items in the list to delete" << endl;
-            return 0;
-        }
-        //if the list has only one item
-        if (head == tail)
-        {
-            T value = head->data;
-            delete (head);
-            head = tail = nullptr;
-            length--;
-            return value;
-        }
-        //if the list has two or more item
-
-        // creating a temporary variable to store head node
-        node<T> *temp = head;
-        //assigning the data to value in order to return
-        T value = temp->data;
-        //assigning the second nodes's prev pointer to null and change change head pointing to it
-        temp->next->prev = nullptr;
-        head = temp->next;
-        //clearing the node and decreasing the size
-        delete (temp);
-        length--;
-        //returning the value which is deleted
-        return value;
+        cout << "No items in the list to delete" << endl;
+        return 0;
     }
-    if (location == length - 1)
-    {
-        if (tail == nullptr)
-        {
-            cout << "No items in the list to delete" << endl;
-            return 0;
-        }
-        if (head == tail)
-        {
-            T value;
-            delete (head);
-            head = tail = nullptr;
-            length--;
-            return value;
-        }
-        //if the list has two or more item
-        // creating a temporary variable to store tail node
-        node<T> *temp = tail;
-        //assigning the data to value in order to return
-        T value = temp->data;
-        //assigning the last second nodes's next pointer to null and change tail pointing to it
-        temp->prev->next = nullptr;
-        tail = temp->prev;
-        //clearing the node and decreasing the size
-        delete (temp);
-        length--;
-        //returning the value which is deleted
-        return value;
-    }
-
     node<T> *temp = find_node(location);
+    //if the list has only one item which is both head and tail node
+    if (head == tail)
+    {
+        T value = temp->data;
+        delete (temp);
+        head = tail = nullptr;
+        length--;
+        return value;
+    }
+    //it means to delete the head node
+    if (temp->prev == nullptr)
+    {
+        head = head->next;
+        head->prev = nullptr;
+        T value = temp->data;
+        delete (temp);
+        length--;
+        return value;
+    }
+    //it means to delete the tail node
+    if (temp->next == nullptr)
+    {
+        tail = tail->prev;
+        tail->next = nullptr;
+        T value = temp->data;
+        delete (temp);
+        length--;
+        return value;
+    }
+    //ususal case to delete the node
     (temp->next)->prev = temp->prev;
     (temp->prev)->next = temp->next;
     //deleting the memory occupied

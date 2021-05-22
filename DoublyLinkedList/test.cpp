@@ -104,7 +104,7 @@ TEST_CASE("Inserting char element at a position")
 }
 TEST_CASE("Inserting string element at a position")
 {
-    dls.insert("This", 1);
+    dls.insert("This", 0);
     REQUIRE(dls.size() == 3);
 }
 TEST_CASE("Inserting long element at a position")
@@ -147,7 +147,7 @@ TEST_CASE("Removing string element in the first position")
 {
 
     REQUIRE(dls.size() == 3);
-    REQUIRE(dls.remove_front() == "Hello");
+    REQUIRE(dls.remove_front() == "This");
     REQUIRE(dls.size() == 2);
 }
 
