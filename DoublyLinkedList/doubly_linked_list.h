@@ -1,3 +1,8 @@
+/*Beginning of the doubly linked list code header file
+class name:doubly_linked_list 
+list elements : head & tail of node *type,length of int type
+node elements : data , next & prev of node* type
+*/
 #include <iostream>
 using namespace std;
 // Node Creation
@@ -5,13 +10,14 @@ template <class T>
 class node
 {
 public:
+    //making data as constant because it shouldn't be modified
     T data;
     node *next;
     node *prev;
-    node(node *x, T value, node *y);
+    node(node *x, const T value, node *y);
 };
 template <typename T>
-node<T>::node(node *x, T value, node *y)
+node<T>::node(node *x, const T value, node *y)
 {
     data = value;
     prev = x;
@@ -20,43 +26,44 @@ node<T>::node(node *x, T value, node *y)
 template <typename T>
 class doubly_linked_list
 { //class
-    node<T> *head = nullptr;
-    node<T> *tail = nullptr;
+    node<T> * head = nullptr;
+    node<T> * tail = nullptr;
     int length = 0;
     //for finding node
-    node<T> *find_node(int location);
+    node<T> *find_node(const int location) const;
 
 public:
     // insertion of value at front & back
-    void push_front(T value);
-    void push_back(T value);
+    void push_front(const T value);
+    void push_back(const T value);
 
     //for inserting at location
-    void insert(T value, int location);
+    void insert(const T value,const int location);
 
     //for removing values at front and back
     T remove_front();
     T remove_back();
 
     //for removing at a location and from a range
-    T remove(int location);
-    void remove(int start, int end);
+    T remove(const int location);
+    void remove(const int start,const int end);
 
     //for finding the size
-    size_t size();
+    size_t size()const;
 
     //check whether empty or not
-    bool is_empty();
+    bool is_empty()const;
 
     //Printing of values
-    void print_values();
+    void print_values()const;
 
     //to clear all the elements in the list
     void clear();
 };
 //for  finding node at a position
 template <typename T>
-node<T> *doubly_linked_list<T>::find_node(int location)
+//made it as a const because no data should be modified because its purpose is to find a node
+node<T> *doubly_linked_list<T>::find_node(const int location) const
 {
     node<T> *temp = head;
     int count = 1;
@@ -73,19 +80,19 @@ node<T> *doubly_linked_list<T>::find_node(int location)
 
 //adding element at the front
 template <typename T>
-void doubly_linked_list<T>::push_front(T value)
+void doubly_linked_list<T>::push_front(const T value)
 {
     insert(value, 0);
 }
 //add the element at the back
 template <typename T>
-void doubly_linked_list<T>::push_back(T value)
+void doubly_linked_list<T>::push_back(const T value)
 {
     insert(value, length);
 }
 //for inserting at a location
 template <typename T>
-void doubly_linked_list<T>::insert(T value, int location)
+void doubly_linked_list<T>::insert(const T value,const int location)
 {
     if (location > length || location < 0)
     {
@@ -244,9 +251,9 @@ void doubly_linked_list<T>::clear()
     cout << "The List is Cleared" << endl;
 }
 
-//prints the values in list
+//prints the values in list and it is constant because it should not modify the contents of links
 template <class T>
-void doubly_linked_list<T>::print_values()
+void doubly_linked_list<T>::print_values() const
 {
     cout << "\n";
     node<T> *x = head;
@@ -265,14 +272,14 @@ void doubly_linked_list<T>::print_values()
 
 //to find the size
 template <typename T>
-size_t doubly_linked_list<T>::size()
+size_t doubly_linked_list<T>::size() const
 {
     return length;
 }
 
 //to check for empty or not
 template <typename T>
-bool doubly_linked_list<T>::is_empty()
+bool doubly_linked_list<T>::is_empty() const 
 {
     return (length == 0);
 }

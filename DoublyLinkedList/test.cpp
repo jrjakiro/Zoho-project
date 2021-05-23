@@ -1,12 +1,17 @@
 #define CATCH_CONFIG_MAIN
 #include "catch_amalgamated.hpp"
 #include "doubly_linked_list.h"
-
+//for integer data
 doubly_linked_list<int> dli;
+//for float data
 doubly_linked_list<float> dlf;
+//for character data
 doubly_linked_list<char> dlc;
+//for string data
 doubly_linked_list<string> dls;
+//for long data
 doubly_linked_list<long> dll;
+//for double data
 doubly_linked_list<double> dld;
 TEST_CASE("Testing the size of list when it is empty")
 {
@@ -290,3 +295,5 @@ TEST_CASE("Removing element in the last position after clearing the list")
 {
     REQUIRE(dli.remove_back() != 1);
 }
+
+// End of test cases
