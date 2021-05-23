@@ -2,7 +2,8 @@
 class name:doubly_linked_list 
 list elements : head & tail of node *type,length of int type
 node elements : data , next & prev of node* type
-*/
+list methods  : (public) print_values(),push_front(),push_back(),insert(),remove_front(),remove_back(),remove(),size(),is_empty(),clear()
+                (private) find_node()*/
 #include <iostream>
 using namespace std;
 // Node Creation
@@ -283,3 +284,5 @@ bool doubly_linked_list<T>::is_empty() const
 {
     return (length == 0);
 }
+
+//end of doubly_linked_list header
