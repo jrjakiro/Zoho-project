@@ -17,6 +17,7 @@ class node
 public:
     //making data as constant because it shouldn't be modified
     T data;
+    //declaring as unique pointer because every next and prev varies
     node *next;
     node *prev;
     node(node *x, const T value, node *y);
@@ -47,6 +48,12 @@ class doubly_linked_list
     node<T> *find_node(const int location) const;
 
 public:
+    // constructor function
+    doubly_linked_list() = default;
+    //destructor function
+    ~doubly_linked_list() = default;
+    //initializing copy constructor with constant list
+    doubly_linked_list(doubly_linked_list const &other) = default;
     // insertion of value at front & back
     void push_front(const T value);
     void push_back(const T value);
@@ -201,8 +208,8 @@ T doubly_linked_list<T>::remove(int location)
     if (head == tail)
     {
         T value = temp->data;
-        delete (temp);
         head = tail = nullptr;
+        delete (temp);
         length--;
         return value;
     }
