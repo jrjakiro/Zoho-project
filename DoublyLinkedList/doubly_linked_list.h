@@ -16,7 +16,9 @@ public:
     node *next;
     node *prev;
     node(node *x, const T value, node *y);
+    ~node();
 };
+//initialization of constructor
 template <typename T>
 node<T>::node(node *x, const T value, node *y)
 {
@@ -24,6 +26,12 @@ node<T>::node(node *x, const T value, node *y)
     prev = x;
     next = y;
 };
+//initialization of destructor for ouput reference
+template <typename T>
+node<T>::~node(){
+    cout << "Destructor is called"<<endl;
+}
+
 template <typename T>
 class doubly_linked_list
 { //class
