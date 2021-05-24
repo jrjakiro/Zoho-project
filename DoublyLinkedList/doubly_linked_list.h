@@ -4,7 +4,11 @@ list elements : head & tail of node *type,length of int type
 node elements : data , next & prev of node* type
 list methods  : (public) print_values(),push_front(),push_back(),insert(),remove_front(),remove_back(),remove(),size(),is_empty(),clear()
                 (private) find_node()*/
+//for preventing end user errors of multiple inclusion
+#pragma once
 #include <iostream>
+//for including smart pointers
+#include <memory>
 using namespace std;
 // Node Creation
 template <class T>
@@ -28,15 +32,16 @@ node<T>::node(node *x, const T value, node *y)
 };
 //initialization of destructor for ouput reference
 template <typename T>
-node<T>::~node(){
-    cout << "Destructor is called"<<endl;
+node<T>::~node()
+{
+    cout << "Destructor is called" << endl;
 }
 
 template <typename T>
 class doubly_linked_list
 { //class
-    node<T> * head = nullptr;
-    node<T> * tail = nullptr;
+    node<T> *head = nullptr;
+    node<T> *tail = nullptr;
     int length = 0;
     //for finding node
     node<T> *find_node(const int location) const;
@@ -47,7 +52,7 @@ public:
     void push_back(const T value);
 
     //for inserting at location
-    void insert(const T value,const int location);
+    void insert(const T value, const int location);
 
     //for removing values at front and back
     T remove_front();
@@ -55,16 +60,16 @@ public:
 
     //for removing at a location and from a range
     T remove(const int location);
-    void remove(const int start,const int end);
+    void remove(const int start, const int end);
 
     //for finding the size
-    size_t size()const;
+    size_t size() const;
 
     //check whether empty or not
-    bool is_empty()const;
+    bool is_empty() const;
 
     //Printing of values
-    void print_values()const;
+    void print_values() const;
 
     //to clear all the elements in the list
     void clear();
@@ -101,7 +106,7 @@ void doubly_linked_list<T>::push_back(const T value)
 }
 //for inserting at a location
 template <typename T>
-void doubly_linked_list<T>::insert(const T value,const int location)
+void doubly_linked_list<T>::insert(const T value, const int location)
 {
     if (location > length || location < 0)
     {
@@ -288,7 +293,7 @@ size_t doubly_linked_list<T>::size() const
 
 //to check for empty or not
 template <typename T>
-bool doubly_linked_list<T>::is_empty() const 
+bool doubly_linked_list<T>::is_empty() const
 {
     return (length == 0);
 }
