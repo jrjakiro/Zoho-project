@@ -192,6 +192,8 @@ T doubly_linked_list<T>::remove_back()
 //for removing node at a position
 template <typename T>
 T doubly_linked_list<T>::remove(int location)
+//memory will be freed automatically when the reference count made Zero, which is done below
+
 {
     //checking for the invalid location
     if (location >= length || location < 0)
@@ -211,7 +213,6 @@ T doubly_linked_list<T>::remove(int location)
     {
         T value = temp->data;
         head = tail = nullptr;
-        //delete (temp);
         length--;
         return value;
     }
@@ -221,7 +222,6 @@ T doubly_linked_list<T>::remove(int location)
         head = head->next;
         head->prev = nullptr;
         T value = temp->data;
-        //delete (temp);
         length--;
         return value;
     }
@@ -231,17 +231,15 @@ T doubly_linked_list<T>::remove(int location)
         tail = tail->prev;
         tail->next = nullptr;
         T value = temp->data;
-        //delete (temp);
         length--;
         return value;
     }
     //ususal case to delete the node
     (temp->next)->prev = temp->prev;
     (temp->prev)->next = temp->next;
-    //deleting the memory occupied
-    //delete (temp);
     length--;
-    return 0;
+    return 0; 
+    //memory will be freed automatically when the reference count made Zero, which is done above
 }
 template <typename T>
 //for deleting the nodes between from and two
