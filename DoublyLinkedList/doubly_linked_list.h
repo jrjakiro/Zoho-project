@@ -20,12 +20,12 @@ public:
     //declaring as unique pointer because every next and prev varies
     std::shared_ptr<node<T>> next;
     std::shared_ptr<node<T>> prev;
-    node(std::shared_ptr<node<T>> x, const T value,std::shared_ptr<node<T>> y);
+    node(std::shared_ptr<node<T>> x, const T value, std::shared_ptr<node<T>> y);
     ~node();
 };
 //initialization of constructor
 template <typename T>
-node<T>::node(std::shared_ptr<node<T>> x, const T value,std::shared_ptr<node<T>> y)
+node<T>::node(std::shared_ptr<node<T>> x, const T value, std::shared_ptr<node<T>> y)
 {
     data = value;
     prev = x;
@@ -49,7 +49,6 @@ class doubly_linked_list
     std::shared_ptr<node<T>> find_node(const int location) const;
 
 public:
-
     // constructor function
     doubly_linked_list() = default;
     //destructor function
