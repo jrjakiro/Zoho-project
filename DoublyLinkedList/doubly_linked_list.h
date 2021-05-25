@@ -43,17 +43,17 @@ class doubly_linked_list
 { //class
     int length = 0;
     //for finding node
-    std::shared_ptr<node<T>> head;
-    std::shared_ptr<node<T>> tail;
+    std::shared_ptr<node<T>> head=nullptr;
+    std::shared_ptr<node<T>> tail=nullptr;
 
     std::shared_ptr<node<T>> find_node(const int location) const;
 
 public:
     // constructor function
-    doubly_linked_list() = default;
+    doubly_linked_list() =default;
     //destructor function
     ~doubly_linked_list() = default;
-    //initializing copy constructor with constant list
+    //initializing copy constructor with constant list to prevent accidental modification of data
     doubly_linked_list(doubly_linked_list const &other) = default;
     // insertion of value at front & back
     void push_front(const T value);
@@ -124,7 +124,7 @@ void doubly_linked_list<T>::insert(const T value, const int location)
 
     if (location == 0)
     {
-        //new node creation
+        //new node creation as shared pointer because each node has two references
         std::shared_ptr<node<T>> new_node = std::make_shared<node<T>>(nullptr, value, head);
 
         //if head node is not empty then prev of head node will be assigned to the new node
@@ -148,7 +148,7 @@ void doubly_linked_list<T>::insert(const T value, const int location)
         std::shared_ptr<node<T>> new_node = std::make_shared<node<T>>(tail, value, nullptr);
 
         //if the list is not empty then tail node is not empty then next of tail node will be assigned to the new node
-        if (!tail)
+        if (tail!=nullptr)
         {
             tail->next = new_node;
         }
@@ -280,6 +280,8 @@ void doubly_linked_list<T>::print_values() const
 {
     cout << "\n";
     std::shared_ptr<node<T>> x = head;
+    cout << "head is " << x->data << endl;
+
     if (head == nullptr)
     {
         cout << "\nNo Items in the list and it is empty" << endl;
