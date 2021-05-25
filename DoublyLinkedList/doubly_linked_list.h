@@ -18,14 +18,14 @@ public:
     //making data as constant because it shouldn't be modified
     T data;
     //declaring as unique pointer because every next and prev varies
-    node *next;
-    node *prev;
-    node(node *x, const T value, node *y);
+    std::shared_ptr<node<T>> next;
+    std::shared_ptr<node<T>> prev;
+    node(std::shared_ptr<node<T>> x, const T value,std::shared_ptr<node<T>> y);
     ~node();
 };
 //initialization of constructor
 template <typename T>
-node<T>::node(node *x, const T value, node *y)
+node<T>::node(std::shared_ptr<node<T>> x, const T value,std::shared_ptr<node<T>> y)
 {
     data = value;
     prev = x;
@@ -41,13 +41,15 @@ node<T>::~node()
 template <typename T>
 class doubly_linked_list
 { //class
-    node<T> *head = nullptr;
-    node<T> *tail = nullptr;
     int length = 0;
     //for finding node
-    node<T> *find_node(const int location) const;
+    std::shared_ptr<node<T>> head;
+    std::shared_ptr<node<T>> tail;
+
+    std::shared_ptr<node<T>> find_node(const int location) const;
 
 public:
+
     // constructor function
     doubly_linked_list() = default;
     //destructor function
@@ -84,9 +86,9 @@ public:
 //for  finding node at a position
 template <typename T>
 //made it as a const because no data should be modified because its purpose is to find a node
-node<T> *doubly_linked_list<T>::find_node(const int location) const
+std::shared_ptr<node<T>> doubly_linked_list<T>::find_node(const int location) const
 {
-    node<T> *temp = head;
+    std::shared_ptr<node<T>> temp = head;
     int count = 1;
     //iterating to insert at a position
     while (count <= location)
@@ -124,7 +126,7 @@ void doubly_linked_list<T>::insert(const T value, const int location)
     if (location == 0)
     {
         //new node creation
-        node<T> *new_node = new node<T>(nullptr, value, head);
+        std::shared_ptr<node<T>> new_node = std::make_shared<node<T>>(nullptr, value, head);
 
         //if head node is not empty then prev of head node will be assigned to the new node
         if (head != nullptr)
@@ -144,10 +146,10 @@ void doubly_linked_list<T>::insert(const T value, const int location)
     if (location == length)
     {
         //new node creation
-        node<T> *new_node = new node<T>(tail, value, nullptr);
+        std::shared_ptr<node<T>> new_node = std::make_shared<node<T>>(tail, value, nullptr);
 
         //if the list is not empty then tail node is not empty then next of tail node will be assigned to the new node
-        if (tail != nullptr)
+        if (!tail)
         {
             tail->next = new_node;
         }
@@ -162,12 +164,13 @@ void doubly_linked_list<T>::insert(const T value, const int location)
     }
 
     //created temporary nodes which will point to previous and next node
-    node<T> *temp1 = find_node(location);
+    std::shared_ptr<node<T>> temp1 = find_node(location);
     //new node has to be inserted after the temp1 node then temp1 is the previous node
     //temp2 node will be next node
-    node<T> *temp2 = temp1->next;
+    std::shared_ptr<node<T>> temp2 = temp1->next;
     //as the new node is inserted between two temp nodes,
-    node<T> *new_node = new node<T>(temp1, value, temp2);
+    std::shared_ptr<node<T>> new_node = std::make_shared<node<T>>(temp1, value, temp2);
+
     //assigning values for the two before and after node.
     temp1->next = new_node;
     temp2->prev = new_node;
@@ -203,13 +206,13 @@ T doubly_linked_list<T>::remove(int location)
         cout << "No items in the list to delete" << endl;
         return 0;
     }
-    node<T> *temp = find_node(location);
+    std::shared_ptr<node<T>> temp = find_node(location);
     //if the list has only one item which is both head and tail node
     if (head == tail)
     {
         T value = temp->data;
         head = tail = nullptr;
-        delete (temp);
+        //delete (temp);
         length--;
         return value;
     }
@@ -219,7 +222,7 @@ T doubly_linked_list<T>::remove(int location)
         head = head->next;
         head->prev = nullptr;
         T value = temp->data;
-        delete (temp);
+        //delete (temp);
         length--;
         return value;
     }
@@ -229,7 +232,7 @@ T doubly_linked_list<T>::remove(int location)
         tail = tail->prev;
         tail->next = nullptr;
         T value = temp->data;
-        delete (temp);
+        //delete (temp);
         length--;
         return value;
     }
@@ -237,7 +240,7 @@ T doubly_linked_list<T>::remove(int location)
     (temp->next)->prev = temp->prev;
     (temp->prev)->next = temp->next;
     //deleting the memory occupied
-    delete (temp);
+    //delete (temp);
     length--;
     return 0;
 }
@@ -251,7 +254,7 @@ void doubly_linked_list<T>::remove(int start, int end)
         cout << "Invalid Range to Remove" << endl;
         return;
     }
-    node<T> *current = head;
+    std::shared_ptr<node<T>> current = head;
     int count = start;
     while (start <= end)
     {
@@ -277,7 +280,7 @@ template <class T>
 void doubly_linked_list<T>::print_values() const
 {
     cout << "\n";
-    node<T> *x = head;
+    std::shared_ptr<node<T>> x = head;
     if (head == nullptr)
     {
         cout << "\nNo Items in the list and it is empty" << endl;
