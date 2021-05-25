@@ -17,7 +17,7 @@ class node
 public:
     //making data as constant because it shouldn't be modified
     T data;
-    //declaring as unique pointer because every next and prev varies
+    //declaring as shared pointer because every next and prev varies
     std::shared_ptr<node<T>> next;
     std::shared_ptr<node<T>> prev;
     node(std::shared_ptr<node<T>> x, const T value, std::shared_ptr<node<T>> y);
