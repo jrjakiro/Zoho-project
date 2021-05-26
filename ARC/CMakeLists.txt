@@ -5,12 +5,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address")
 
 
-project(DoublyLinkedList)
+project(ARC)
 
-add_executable(
-    arc
-    arc.cpp
-)
 add_executable(
     lru 
     lru.cpp
