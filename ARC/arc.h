@@ -184,7 +184,7 @@ void arc::print_values()
     qnode *head = queue->front;
     while (head != nullptr)
     {
-        printf("%d ", head->ipage_number);
+        cout<<head->ipage_number<<endl;
         head = head->next;
     }
     if (queue->front)
@@ -200,7 +200,7 @@ void arc::print_values()
     head = queue->front;
     while (head != nullptr)
     {
-        printf("%d ", head->ipage_number);
+        cout << head->ipage_number<<endl;
         head = head->next;
     }
     if (queue->front)
@@ -216,7 +216,7 @@ void arc::print_values()
     head = queue->front;
     while (head != nullptr)
     {
-        printf("%d ", head->ipage_number);
+        cout << head->ipage_number << endl;
         head = head->next;
     }
     if (queue->front)
@@ -232,7 +232,7 @@ void arc::print_values()
     head = queue->front;
     while (head != nullptr)
     {
-        printf("%d ", head->ipage_number);
+        cout << head->ipage_number << endl;
         head = head->next;
     }
     if (queue->front)
