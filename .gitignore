@@ -34,3 +34,4 @@ ARC/DartConfiguration.tcl
 ARC/lru
 ARC/tester_tests-b12d07c.cmake
 ARC/tester_include-b12d07c.cmake
+ARC/.vscode/settings.json
