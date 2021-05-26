@@ -18,3 +18,16 @@ DoublyLinkedList/tester_include-b12d07c.cmake
 DoublyLinkedList/tester
 DoublyLinkedList/DartConfiguration.tcl
 DoublyLinkedList/LLV
+DoublyLinkedList/arc
+DoublyLinkedList/arc.cpp
+.gitignore
+DoublyLinkedList/doubly_linked_list.h
+DoublyLinkedList/lru
+DoublyLinkedList/main.cpp
+DoublyLinkedList/arc
+DoublyLinkedList/arc1.cpp
+ARC/.vscode/c_cpp_properties.json
+ARC/tester
+ARC/catch_amalgamated.cpp
+.gitignore
+ARC/catch_amalgamated.hpp
