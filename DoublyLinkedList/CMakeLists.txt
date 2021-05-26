@@ -8,8 +8,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address")
 project(DoublyLinkedList)
 
 add_executable(
-    doubly_linked_list
-    main.cpp
+    arc
+    arc1.cpp
 )
 
 find_package(Catch2 REQUIRED)
