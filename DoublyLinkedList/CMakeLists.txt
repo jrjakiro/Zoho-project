@@ -9,15 +9,21 @@ project(DoublyLinkedList)
 
 add_executable(
     arc
-    arc1.cpp
+    arc.cpp
 )
+add_executable(
+    lru 
+    lru.cpp
+)
+
 
 find_package(Catch2 REQUIRED)
 add_executable(
     tester 
     catch_amalgamated.cpp 
-    test.cpp
+    testlru.cpp
 )
+
 target_link_libraries(tester PRIVATE Catch2::Catch2)
 
 include(CTest)
