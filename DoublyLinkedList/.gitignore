@@ -1,0 +1,12 @@
+.DS_Store
+**/.DS_Store
+CMakeFiles/
+.
+..
+build/
+cmake_install.cmake
+CmakeCache.txt
+doubly_linked_list
+Makefile
+vscode/
+main
