@@ -1,0 +1,12 @@
+CREATE EXTENSION count;
+SELECT count();
+ insert into employee(name) values('karthik');
+SELECT count();
+ insert into employee(name) values('karthik');
+ delete * from employee where name='karthik';
+ insert into employee(name) values('sridhar');
+ insert into employee(name) values('steve');
+ insert into employee(name) values('bill');
+ insert into employee(name) values('jeff');
+ insert into employee(name) values('elon');
+SELECT count();
