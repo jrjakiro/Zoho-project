@@ -4,7 +4,6 @@ RETURNS int
 LANGUAGE plpgsql IMMUTABLE STRICT
   AS $$
     DECLARE
-    val int;
 
     BEGIN
         val :=sum(xact_commit+xact_rollback) FROM pg_stat_database;
