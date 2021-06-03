@@ -1,0 +1,5 @@
+#calculate extension
+comment = 'extension to count number of insert, update, delete, select queries a postgres database is receiving'
+default_version = '0.0.1'
+relocatable = true
+module_pathname = '$libdir/calculate'
